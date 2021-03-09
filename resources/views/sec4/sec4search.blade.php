@@ -1,28 +1,28 @@
 @include('partials.header')
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Mitr&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mitr&display=swap');
 
-    .newFont {
-        font-family: 'Mitr', sans-serif;
-    }
+.newFont {
+    font-family: 'Mitr', sans-serif;
+}
 
-    .button-position {
-        float: right;
-        margin: -8px;
-    }
+.button-position {
+    float: right;
+    margin: -8px;
+}
 
-    .btns {
-        padding: 0.9rem 2em;
-        font-size: 0.875rem;
-    }
+.btns {
+    padding: 0.9rem 2em;
+    font-size: 0.875rem;
+}
 
-    td {
-        text-align: center;
-    }
+td {
+    text-align: center;
+}
 
-    th {
-        text-align: center;
-    }
+th {
+    text-align: center;
+}
 </style>
 <!-- ------------------------------------------  Link Script Jquery-  --------------------------------------------->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -51,32 +51,44 @@
                         <div class="col-12 grid-margin stretch-card">
                             <div class="card">
                                 <div class="card-body">
-                                <div class="container">
+                                    <div class="container">
                                         <h3 class="newFont"> ค้นหาผลการดำเนินงานย้อนหลัง ส่วนที่4 </h3>
-                                            <label class="newFont">ค้นหา</label>
-                                                <div class="row">
-                                                    <div class="col-sm-3">
-                                                        <select class="form-control">
-                                                            <optgroup class="newFont">
-                                                                <option>ปี</option>
-                                                                    <option>2563</option>
-                                                                    <option>2564</option>
-                                                            </optgroup>
-                                                        </select>
-                                                    </div>
-                                                    <div class="col-sm-3">
-                                                        <select class="form-control">
-                                                            <optgroup class="newFont">
-                                                                <option>เดือน</option>
-                                                                    <option>มกราคม</option>
-                                                                    <option>ธันวาคม</option>
-                                                            </optgroup>
-                                                        </select>
-                                                    </div>
-                                                    <div class="col-sm-3">
-                                                        <button class="btn btn-gradient-primary newFont" data-toggle="modal" data-target=""><i class="mdi mdi-account-search-outline"></i></button>
-                                                    </div>
-                                                </div>
+                                        <label class="newFont">ค้นหา</label>
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <select class="form-control">
+                                                    <optgroup class="newFont">
+                                                        <option>ปี</option>
+                                                        <option>2563</option>
+                                                        <option>2564</option>
+                                                    </optgroup>
+                                                </select>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <select class="form-control">
+                                                    <optgroup class="newFont">
+                                                        <option>เดือน</option>
+                                                        <option>มกราคม</option>
+                                                        <option>กุมภาพันธ์</option>
+                                                        <option>มีนาคม</option>
+                                                        <option>เมษายน</option>
+                                                        <option>พฤษภาคม</option>
+                                                        <option>มิถุนายน</option>
+                                                        <option>กรกฎาคม</option>
+                                                        <option>สิงหาคม</option>
+                                                        <option>กันยายน</option>
+                                                        <option>ตุลาคม </option>
+                                                        <option>พฤศจิกายน</option>
+                                                        <option>ธันวาคม</option>
+                                                    </optgroup>
+                                                </select>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <button class="btn btn-gradient-primary newFont" data-toggle="modal"
+                                                    data-target=""><i
+                                                        class="mdi mdi-account-search-outline"></i></button>
+                                            </div>
+                                        </div>
                                     </div>
                                     <br>
                                     <br>
@@ -101,21 +113,34 @@
                                                 <tbody>
                                                     <tr class="d-flex">
                                                         <td class="col-sm-1"> 1 </td>
-                                                        <td class="col-sm-6"> WU2-2-3 ร้อยละความพึงพอใจของผู้รับบริการ (นักศึกษา บุคลากรและประชาชน)
+                                                        <td class="col-sm-6"> WU2-2-3 ร้อยละความพึงพอใจของผู้รับบริการ
+                                                            (นักศึกษา บุคลากรและประชาชน)
                                                         </td>
                                                         <td class="col-sm-2"> ปรีชา </td>
-                                                        <td class="col-sm-3"><button class="btn btn-gradient-success newFont" data-toggle="modal" data-target="#editindicator"><i class="mdi mdi-grease-pencil launch-modal"></i></button>
-                                                            <button class="btn btn-gradient-danger newFont" data-toggle="modal" data-target="#deleteindicator"><i class="mdi mdi-delete"></i></button>
+                                                        <td class="col-sm-3"><button
+                                                                class="btn btn-gradient-success newFont"
+                                                                data-toggle="modal" data-target="#editindicator"><i
+                                                                    class="mdi mdi-grease-pencil launch-modal"></i></button>
+                                                            <button class="btn btn-gradient-danger newFont"
+                                                                data-toggle="modal" data-target="#deleteindicator"><i
+                                                                    class="mdi mdi-delete"></i></button>
                                                         </td>
                                                     </tr>
                                                     <tr class="d-flex">
                                                         <td class="col-sm-1"> 2 </td>
                                                         <td class="col-sm-6">
-                                                            WU6-2-4 จำนวนประชาชนที่เข้าถึงหลักสูตร/<br>แหล่งเรียนรู้ที่จัดการศึกษาในรูปแบบ life long learning
+                                                            WU6-2-4
+                                                            จำนวนประชาชนที่เข้าถึงหลักสูตร/<br>แหล่งเรียนรู้ที่จัดการศึกษาในรูปแบบ
+                                                            life long learning
                                                         </td>
                                                         <td class="col-sm-2"> ปรีชา </td>
-                                                        <td class="col-sm-3"><button class="btn btn-gradient-success newFont" data-toggle="modal" data-target="#editindicator"><i class="mdi mdi-grease-pencil launch-modal"></i></button>
-                                                            <button class="btn btn-gradient-danger newFont" data-toggle="modal" data-target="#deleteindicator"><i class="mdi mdi-delete"></i></button>
+                                                        <td class="col-sm-3"><button
+                                                                class="btn btn-gradient-success newFont"
+                                                                data-toggle="modal" data-target="#editindicator"><i
+                                                                    class="mdi mdi-grease-pencil launch-modal"></i></button>
+                                                            <button class="btn btn-gradient-danger newFont"
+                                                                data-toggle="modal" data-target="#deleteindicator"><i
+                                                                    class="mdi mdi-delete"></i></button>
                                                         </td>
                                                     </tr>
                                                 </tbody>
@@ -130,7 +155,8 @@
                         <!-- ------------------------------------------  แสดงตัวชี้วัด end-  --------------------------------------------->
 
                         <!-- ------------------------------------------  แก้ไขตัวชี้วัด ---------------------------------------------------->
-                        <div class="modal fade" id="editindicator" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal fade" id="editindicator" tabindex="-1" role="dialog" data-backdrop="static"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-xl" role="document">
                                 <div class="modal-content">
                                     <div class="modal-body">
@@ -141,7 +167,8 @@
                                             <div class="row">
                                                 <div class="form-group col-md-8">
                                                     <label class="newFont">ตัวชี้วัด</label>
-                                                    <input type="text" class="form-control" placeholder="ตัวชี้วัด" value="" required>
+                                                    <input type="text" class="form-control" placeholder="ตัวชี้วัด"
+                                                        value="" required>
                                                 </div>
                                                 <div class="form-group col-md-2">
                                                     <label class="newFont">ผู้รับผิดชอบ</label>
@@ -157,7 +184,8 @@
                                                 </div>
                                                 <div class="form-group col-md-2">
                                                     <label class="newFont">หน่วยนับ</label>
-                                                    <input type="text" class="form-control" placeholder="หน่วยนับ" required>
+                                                    <input type="text" class="form-control" placeholder="หน่วยนับ"
+                                                        required>
                                                 </div>
                                             </div>
                                         </form>
@@ -174,7 +202,8 @@
                             </div>
                         </div>
 
-                        <div class="modal fade" id="addindicator" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal fade" id="addindicator" tabindex="-1" role="dialog" data-backdrop="static"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-xl" role="document">
                                 <div class="modal-content">
                                     <div class="modal-body">
@@ -185,7 +214,8 @@
                                             <div class="row">
                                                 <div class="form-group col-md-8">
                                                     <label class="newFont">หัวข้อ</label>
-                                                    <input type="text" class="form-control" placeholder="หัวข้อตัวขี้วัด" required>
+                                                    <input type="text" class="form-control"
+                                                        placeholder="หัวข้อตัวขี้วัด" required>
                                                 </div>
                                                 <div class="form-group col-md-2">
                                                     <label class="newFont">ผู้รับผิดชอบ</label>
@@ -202,13 +232,15 @@
                                                 <div class="form-group col-md-2">
                                                     <label class="newFont">หน่วยนับ</label>
 
-                                                    <input type="text" class="form-control" placeholder="หน่วยนับ" required>
+                                                    <input type="text" class="form-control" placeholder="หน่วยนับ"
+                                                        required>
 
                                                 </div>
                                                 <div class="form-group col-md-9"></div>
 
                                                 <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                                                    <button type="button" class="btn btn-secondary"
+                                                        data-dismiss="modal">
                                                         <h7 class="newFont">ยกเลิก</h7>
                                                     </button>
                                                     <button type="button" class="btn btn-primary">
@@ -222,7 +254,8 @@
                             </div>
                         </div>
 
-                        <div class="modal fade" id="deleteindicator" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal fade" id="deleteindicator" tabindex="-1" role="dialog" data-backdrop="static"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -235,7 +268,8 @@
                                         <p class="newFont">ต้องการลบตัวชี้วัดนี้หรือไม่</p>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary newFont" data-dismiss="modal">ยกเลิก</button>
+                                        <button type="button" class="btn btn-secondary newFont"
+                                            data-dismiss="modal">ยกเลิก</button>
                                         <button type="button" class="btn btn-primary newFont">ยืนยัน</button>
                                     </div>
                                 </div>
