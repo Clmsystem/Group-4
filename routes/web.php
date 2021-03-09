@@ -36,6 +36,9 @@ Route::get('/sec3savedata', function () {
 Route::get('/sec3addind', function () {
     return view('sec3.addind');
 });
+Route::get('/sec3search', function () {
+    return view('sec3.sec3search');
+});
 
 Route::get('/sec4savedata', function () {
     return view('sec4.savedata');
@@ -44,6 +47,11 @@ Route::get('/sec4savedata', function () {
 Route::get('/sec4addind', function () {
     return view('sec4.addind');
 });
+
+Route::get('/sec4search', function () {
+    return view('sec4.sec4search');
+});
+
 
 Route::post('/index', function () {
     return view('index');
