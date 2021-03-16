@@ -138,7 +138,7 @@ th {
                                                         <td class="col-sm-3"><button
                                                                 class="btn btn-gradient-warning newFont"
                                                                 data-toggle="modal" data-target="#downloadindicator"><i
-                                                                    class="mdi mdi-arrow-down-bold-hexagon-outline"></i>
+                                                                    class="mdi mdi-cloud-download"></i>
                                                             </button>
                                                             <button class="btn btn-gradient-info newFont"
                                                                 data-toggle="modal" data-target="#infoindicator"><i
@@ -154,7 +154,7 @@ th {
                                                         <td class="col-sm-3"><button
                                                                 class="btn btn-gradient-warning newFont"
                                                                 data-toggle="modal" data-target="#downloadindicator"><i
-                                                                    class="mdi mdi-arrow-down-bold-hexagon-outline"></i>
+                                                                    class="mdi mdi-cloud-download"></i>
                                                             </button>
                                                             <button class="btn btn-gradient-info newFont"
                                                                 data-toggle="modal" data-target="#infoindicator"><i
