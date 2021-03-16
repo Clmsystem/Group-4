@@ -20,6 +20,13 @@ td {
     text-align: center;
 }
 
+td.break {
+    word-wrap: break-word;
+    word-break: break-all;
+    white-space: normal;
+}
+
+
 th {
     text-align: center;
 }
@@ -53,7 +60,7 @@ th {
                             <div class="card">
                                 <div class="card-body">
                                     <div class="container">
-                                        <h3 class="newFont"> ค้นหาผลการดำเนินงานย้อนหลัง ส่วนที่3 </h3>
+                                        <h3 class="newFont"> ค้นหาผลการดำเนินงานย้อนหลัง ส่วนที่4 </h3>
                                         <label class="newFont">ค้นหา</label>
                                         <div class="row">
                                             <div class="col-sm-3">
@@ -100,7 +107,7 @@ th {
                             <div class="card">
                                 <div class="card-body">
                                     <div class="container">
-                                        <h3 class="newFont"> ข้อมูลผลการดำเนินงานย้อนหลัง ส่วนที่3 </h3>
+                                        <h3 class="newFont"> ข้อมูลผลการดำเนินงานย้อนหลัง ส่วนที่4 </h3>
                                     </div>
                                     <br>
                                     <br>
@@ -131,8 +138,8 @@ th {
                                                 <tbody>
                                                     <tr class="d-flex">
                                                         <td class="col-sm-1"> 1 </td>
-                                                        <td class="col-sm-3"> จำนวนหนังสือต่อนักศึกษา * </td>
-                                                        <td class="col-sm-2"> แผนตัวชี้วัด </td>
+                                                        <td class="col-sm-3 break"> จำนวนหนังสือต่อนักศึกษา* </td>
+                                                        <td class="col-sm-2 break"> แผนตัวชี้วัด </td>
                                                         <td class="col-sm-1"> เล่ม/คน </td>
                                                         <td class="col-sm-2"> อาภรณ์ </td>
                                                         <td class="col-sm-3"><button
@@ -147,8 +154,8 @@ th {
                                                     </tr>
                                                     <tr class="d-flex">
                                                         <td class="col-sm-1"> 2 </td>
-                                                        <td class="col-sm-3"> จำนวนหนังสือต่อนักศึกษา * </td>
-                                                        <td class="col-sm-2"> แผนตัวชี้วัด </td>
+                                                        <td class="col-sm-3 break"> จำนวนหนังสือต่อนักศึกษา * </td>
+                                                        <td class="col-sm-2 break"> แผนตัวชี้วัด </td>
                                                         <td class="col-sm-1"> เล่ม/คน </td>
                                                         <td class="col-sm-2"> อาภรณ์ </td>
                                                         <td class="col-sm-3"><button
