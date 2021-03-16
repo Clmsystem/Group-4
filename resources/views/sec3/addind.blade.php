@@ -131,6 +131,12 @@
                                             </div>
                                             <div class="row">
                                                 <div class="form-group col-md-6">
+                                                    <label class="newFont">หน่วยนับ</label>
+
+                                                    <input type="text" class="form-control" placeholder="หน่วยนับ" required>
+
+                                                </div>
+                                                <div class="form-group col-md-6">
                                                     <label class="newFont">ผู้รับผิดชอบ</label>
                                                     <select class="form-control">
                                                         <optgroup class="newFont">
@@ -141,12 +147,6 @@
                                                             <option>อาภรณ์</option>
                                                         </optgroup>
                                                     </select>
-                                                </div>
-                                                <div class="form-group col-md-6">
-                                                    <label class="newFont">หน่วยนับ</label>
-
-                                                    <input type="text" class="form-control" placeholder="หน่วยนับ" required>
-
                                                 </div>
                                                 <div class="form-group col-md-9"></div>
 
@@ -187,6 +187,12 @@
                                             </div>
                                             <div class="row">
                                                 <div class="form-group col-md-6">
+                                                    <label class="newFont">หน่วยนับ</label>
+
+                                                    <input type="text" class="form-control" placeholder="หน่วยนับ" required>
+
+                                                </div>
+                                                <div class="form-group col-md-6">
                                                     <label class="newFont">ผู้รับผิดชอบ</label>
                                                     <select class="form-control">
                                                         <optgroup class="newFont">
@@ -197,12 +203,6 @@
                                                             <option>อาภรณ์</option>
                                                         </optgroup>
                                                     </select>
-                                                </div>
-                                                <div class="form-group col-md-6">
-                                                    <label class="newFont">หน่วยนับ</label>
-
-                                                    <input type="text" class="form-control" placeholder="หน่วยนับ" required>
-
                                                 </div>
                                                 <div class="form-group col-md-9"></div>
 

@@ -114,13 +114,26 @@
                                         <br>
                                         <h2 class="modal-title newFont" id="exampleModalLabel">แก้ไขตัวชี้วัด</h2>
                                         <form class="forms-sample">
-                                            <hr><br>
                                             <div class="row">
-                                                <div class="form-group col-md-8">
-                                                    <label class="newFont">ตัวชี้วัด</label>
-                                                    <input type="text" class="form-control" placeholder="ตัวชี้วัด" value="" required>
+                                                <div class="form-group col-md-12">
+                                                    <label class="newFont">หัวข้อ</label>
+                                                    <input type="text" class="form-control" placeholder="หัวข้อตัวขี้วัด" required>
                                                 </div>
-                                                <div class="form-group col-md-2">
+                                            </div>
+                                            <div class="row">
+                                                <div class="form-group col-md-12">
+                                                    <label class="newFont">แผน</label>
+                                                    <input type="text" class="form-control" placeholder="แผนตัวชี้วัด" required>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="form-group col-md-6">
+                                                    <label class="newFont">หน่วยนับ</label>
+
+                                                    <input type="text" class="form-control" placeholder="หน่วยนับ" required>
+
+                                                </div>
+                                                <div class="form-group col-md-6">
                                                     <label class="newFont">ผู้รับผิดชอบ</label>
                                                     <select class="form-control">
                                                         <optgroup class="newFont">
@@ -132,20 +145,18 @@
                                                         </optgroup>
                                                     </select>
                                                 </div>
-                                                <div class="form-group col-md-2">
-                                                    <label class="newFont">หน่วยนับ</label>
-                                                    <input type="text" class="form-control" placeholder="หน่วยนับ" required>
+                                                <div class="form-group col-md-9"></div>
+
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                                                        <h7 class="newFont">ยกเลิก</h7>
+                                                    </button>
+                                                    <button type="button" class="btn btn-primary">
+                                                        <h7 class="newFont">บันทึก</h7>
+                                                    </button>
                                                 </div>
                                             </div>
                                         </form>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">
-                                            <h7 class="newFont">ยกเลิก</ย>
-                                        </button>
-                                        <button type="button" class="btn btn-primary">
-                                            <h7 class="newFont">บันทึก</h7>
-                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -160,11 +171,25 @@
                                         <hr><br>
                                         <form class="forms-sample">
                                             <div class="row">
-                                                <div class="form-group col-md-8">
+                                                <div class="form-group col-md-12">
                                                     <label class="newFont">หัวข้อ</label>
                                                     <input type="text" class="form-control" placeholder="หัวข้อตัวขี้วัด" required>
                                                 </div>
-                                                <div class="form-group col-md-2">
+                                            </div>
+                                            <div class="row">
+                                                <div class="form-group col-md-12">
+                                                    <label class="newFont">แผน</label>
+                                                    <input type="text" class="form-control" placeholder="แผนตัวชี้วัด" required>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="form-group col-md-6">
+                                                    <label class="newFont">หน่วยนับ</label>
+
+                                                    <input type="text" class="form-control" placeholder="หน่วยนับ" required>
+
+                                                </div>
+                                                <div class="form-group col-md-6">
                                                     <label class="newFont">ผู้รับผิดชอบ</label>
                                                     <select class="form-control">
                                                         <optgroup class="newFont">
@@ -175,12 +200,6 @@
                                                             <option>อาภรณ์</option>
                                                         </optgroup>
                                                     </select>
-                                                </div>
-                                                <div class="form-group col-md-2">
-                                                    <label class="newFont">หน่วยนับ</label>
-
-                                                    <input type="text" class="form-control" placeholder="หน่วยนับ" required>
-
                                                 </div>
                                                 <div class="form-group col-md-9"></div>
 
