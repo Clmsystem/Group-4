@@ -74,7 +74,7 @@
                     <tbody>
                       <tr class="d-flex">
                         <td class="col-sm-3"> WU2-2-3 <br>ร้อยละความพึงพอใจของผู้รับบริการ <br>(นักศึกษา บุคลากรและประชาชน) </td>
-                        <th class="col-sm-2"> ร้อยละ 85 </th>
+                        <td class="col-sm-2"> ร้อยละ 85 </td>
                         <td class="col-sm-1">  </td>
                         <td class="col-sm-1">  </td>
                         <td class="col-sm-3">  </td>
@@ -83,7 +83,7 @@
                       </tr>
                       <tr class="d-flex">
                         <td class="col-sm-3"> WU6-2-4 <br>จำนวนประชาชนที่เข้าถึงหลักสูตร/<br>แหล่งเรียนรู้ที่จัดการศึกษาในรูปแบบ<br> life long learning</td>
-                        <th class="col-sm-2"> 100,000 คน <br>(ออนไลน์/ฐานข้อมูล, <br>บุคคลภายนอกดูงาน <br>,MOOC) </th>
+                        <td class="col-sm-2"> 100,000 คน<br>(ออนไลน์/ฐานข้อมูล,<br> บุคคลภายนอกดูงาน,<br>MOOC)</td>
                         <td class="col-sm-1"> </td>
                         <td class="col-sm-1"> </td>
                         <td class="col-sm-3"> </td>
