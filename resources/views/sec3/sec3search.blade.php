@@ -68,19 +68,19 @@ th {
                                             <div class="col-sm-3">
                                                 <select class="form-control">
                                                     <optgroup class="newFont">
-                                                        <<option>เดือน</option>
-                                                            <option>มกราคม</option>
-                                                            <option>กุมภาพันธ์</option>
-                                                            <option>มีนาคม</option>
-                                                            <option>เมษายน</option>
-                                                            <option>พฤษภาคม</option>
-                                                            <option>มิถุนายน</option>
-                                                            <option>กรกฎาคม</option>
-                                                            <option>สิงหาคม</option>
-                                                            <option>กันยายน</option>
-                                                            <option>ตุลาคม </option>
-                                                            <option>พฤศจิกายน</option>
-                                                            <option>ธันวาคม</option>
+                                                        <option>เดือน</option>
+                                                        <option>มกราคม</option>
+                                                        <option>กุมภาพันธ์</option>
+                                                        <option>มีนาคม</option>
+                                                        <option>เมษายน</option>
+                                                        <option>พฤษภาคม</option>
+                                                        <option>มิถุนายน</option>
+                                                        <option>กรกฎาคม</option>
+                                                        <option>สิงหาคม</option>
+                                                        <option>กันยายน</option>
+                                                        <option>ตุลาคม </option>
+                                                        <option>พฤศจิกายน</option>
+                                                        <option>ธันวาคม</option>
                                                     </optgroup>
                                                 </select>
                                             </div>
