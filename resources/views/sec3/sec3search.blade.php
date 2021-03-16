@@ -68,19 +68,19 @@ th {
                                             <div class="col-sm-3">
                                                 <select class="form-control">
                                                     <optgroup class="newFont">
-                                                        <<option>เดือน</option>
-                                                            <option>มกราคม</option>
-                                                            <option>กุมภาพันธ์</option>
-                                                            <option>มีนาคม</option>
-                                                            <option>เมษายน</option>
-                                                            <option>พฤษภาคม</option>
-                                                            <option>มิถุนายน</option>
-                                                            <option>กรกฎาคม</option>
-                                                            <option>สิงหาคม</option>
-                                                            <option>กันยายน</option>
-                                                            <option>ตุลาคม </option>
-                                                            <option>พฤศจิกายน</option>
-                                                            <option>ธันวาคม</option>
+                                                        <option>เดือน</option>
+                                                        <option>มกราคม</option>
+                                                        <option>กุมภาพันธ์</option>
+                                                        <option>มีนาคม</option>
+                                                        <option>เมษายน</option>
+                                                        <option>พฤษภาคม</option>
+                                                        <option>มิถุนายน</option>
+                                                        <option>กรกฎาคม</option>
+                                                        <option>สิงหาคม</option>
+                                                        <option>กันยายน</option>
+                                                        <option>ตุลาคม </option>
+                                                        <option>พฤศจิกายน</option>
+                                                        <option>ธันวาคม</option>
                                                     </optgroup>
                                                 </select>
                                             </div>
@@ -138,7 +138,7 @@ th {
                                                         <td class="col-sm-3"><button
                                                                 class="btn btn-gradient-warning newFont"
                                                                 data-toggle="modal" data-target="#downloadindicator"><i
-                                                                    class="mdi mdi-arrow-down-bold-hexagon-outline"></i>
+                                                                    class="mdi mdi-cloud-download"></i>
                                                             </button>
                                                             <button class="btn btn-gradient-info newFont"
                                                                 data-toggle="modal" data-target="#infoindicator"><i
@@ -154,7 +154,7 @@ th {
                                                         <td class="col-sm-3"><button
                                                                 class="btn btn-gradient-warning newFont"
                                                                 data-toggle="modal" data-target="#downloadindicator"><i
-                                                                    class="mdi mdi-arrow-down-bold-hexagon-outline"></i>
+                                                                    class="mdi mdi-cloud-download"></i>
                                                             </button>
                                                             <button class="btn btn-gradient-info newFont"
                                                                 data-toggle="modal" data-target="#infoindicator"><i
