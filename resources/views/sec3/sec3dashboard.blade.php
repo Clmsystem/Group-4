@@ -44,11 +44,10 @@ th {
                     <div class="row">
                         <div class="col-md-12 grid-margin stretch-card">
                             <div class="page-header">
-                                <h3 class="newFont">ฝ่ายส่งเสริมการเรียนรู้และให้บริการการศึกษา</h3>
+                                <h3 class="newFont">Dashboard</h3>
                             </div>
                         </div>
 
-                        <!-- ค้นหาตัวชี้วัด -->
                         <div class="col-12 grid-margin stretch-card">
                             <div class="card">
                                 <div class="card-body">
@@ -91,17 +90,6 @@ th {
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- ข้อมูลตัวชี้วัด -->
-                        <div class="col-12 grid-margin stretch-card">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="container">
-                                        <h3 class="newFont"> ข้อมูลผลการดำเนินงานย้อนหลัง ส่วนที่3 </h3>
-                                    </div>
                                     <br>
                                     <br>
                                     <div class="row">
@@ -113,52 +101,45 @@ th {
                                                         <th class="col-sm-1" scope="col">
                                                             <h7 class="newFont">ลำดับ</h7>
                                                         </th>
-                                                        <th class="col-sm-3" scope="col">
+                                                        <th class="col-sm-4" scope="col">
                                                             <h7 class="newFont">ตัวชี้วัด</h7>
                                                         </th>
                                                         <th class="col-sm-2" scope="col">
-                                                            <h7 class="newFont">แผน</h7>
-                                                        </th>
-                                                        <th class="col-sm-1" scope="col">
                                                             <h7 class="newFont">หน่วยนับ</h7>
                                                         </th>
                                                         <th class="col-sm-2" scope="col">
                                                             <h7 class="newFont">ผู้รับผิดชอบ</h7>
                                                         </th>
-
+                                                        <th class="col-sm-3" scope="col">แก้ไข/ลบ</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
                                                     <tr class="d-flex">
                                                         <td class="col-sm-1"> 1 </td>
-                                                        <td class="col-sm-3"> จำนวนหนังสือต่อนักศึกษา * </td>
-                                                        <td class="col-sm-2"> แผนตัวชี้วัด </td>
-                                                        <td class="col-sm-1"> เล่ม/คน </td>
+                                                        <td class="col-sm-4"> จำนวนหนังสือต่อนักศึกษา * </td>
+                                                        <td class="col-sm-2"> เล่ม/คน </td>
                                                         <td class="col-sm-2"> อาภรณ์ </td>
                                                         <td class="col-sm-3"><button
-                                                                class="btn btn-gradient-warning newFont"
-                                                                data-toggle="modal" data-target="#downloadindicator"><i
-                                                                    class="mdi mdi-arrow-down-bold-hexagon-outline"></i>
-                                                            </button>
-                                                            <button class="btn btn-gradient-info newFont"
-                                                                data-toggle="modal" data-target="#infoindicator"><i
-                                                                    class="mdi mdi-chart-areaspline"></i></button>
+                                                                class="btn btn-gradient-success newFont"
+                                                                data-toggle="modal" data-target="#editindicator"><i
+                                                                    class="mdi mdi-grease-pencil launch-modal"></i></button>
+                                                            <button class="btn btn-gradient-danger newFont"
+                                                                data-toggle="modal" data-target="#deleteindicator"><i
+                                                                    class="mdi mdi-delete"></i></button>
                                                         </td>
                                                     </tr>
                                                     <tr class="d-flex">
                                                         <td class="col-sm-1"> 2 </td>
-                                                        <td class="col-sm-3"> จำนวนหนังสือต่อนักศึกษา * </td>
-                                                        <td class="col-sm-2"> แผนตัวชี้วัด </td>
-                                                        <td class="col-sm-1"> เล่ม/คน </td>
+                                                        <td class="col-sm-4"> จำนวนหนังสือต่ออาจารย์ * </td>
+                                                        <td class="col-sm-2"> เล่ม/คน </td>
                                                         <td class="col-sm-2"> อาภรณ์ </td>
                                                         <td class="col-sm-3"><button
-                                                                class="btn btn-gradient-warning newFont"
-                                                                data-toggle="modal" data-target="#downloadindicator"><i
-                                                                    class="mdi mdi-arrow-down-bold-hexagon-outline"></i>
-                                                            </button>
-                                                            <button class="btn btn-gradient-info newFont"
-                                                                data-toggle="modal" data-target="#infoindicator"><i
-                                                                    class="mdi mdi-chart-areaspline"></i></button>
+                                                                class="btn btn-gradient-success newFont"
+                                                                data-toggle="modal" data-target="#editindicator"><i
+                                                                    class="mdi mdi-grease-pencil launch-modal"></i></button>
+                                                            <button class="btn btn-gradient-danger newFont"
+                                                                data-toggle="modal" data-target="#deleteindicator"><i
+                                                                    class="mdi mdi-delete"></i></button>
                                                         </td>
                                                     </tr>
                                                 </tbody>
@@ -172,14 +153,14 @@ th {
 
                         <!-- ------------------------------------------  แสดงตัวชี้วัด end-  --------------------------------------------->
 
-                        <!-- ------------------------------------------  แสดงข้อมูลตัวชี้วัด ---------------------------------------------------->
-                        <div class="modal fade" id="infoindicator" tabindex="-1" role="dialog" data-backdrop="static"
+                        <!-- ------------------------------------------  แก้ไขตัวชี้วัด ---------------------------------------------------->
+                        <div class="modal fade" id="editindicator" tabindex="-1" role="dialog" data-backdrop="static"
                             aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-xl" role="document">
                                 <div class="modal-content">
                                     <div class="modal-body">
                                         <br>
-                                        <h2 class="modal-title newFont" id="exampleModalLabel">ข้อมูลตัวชี้วัด</h2>
+                                        <h2 class="modal-title newFont" id="exampleModalLabel">แก้ไขตัวชี้วัด</h2>
                                         <form class="forms-sample">
                                             <hr><br>
                                             <div class="row">
@@ -220,19 +201,70 @@ th {
                             </div>
                         </div>
 
-                        <!-- ดาวน์โหลดตัวชี้วัด -->
-                        <div class="modal fade" id="downloadindicator" tabindex="-1" role="dialog"
-                            data-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal fade" id="addindicator" tabindex="-1" role="dialog" data-backdrop="static"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-xl" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        <br>
+                                        <h2 class="newFont">สร้างตัวชี้วัด</h2><br>
+                                        <hr><br>
+                                        <form class="forms-sample">
+                                            <div class="row">
+                                                <div class="form-group col-md-8">
+                                                    <label class="newFont">หัวข้อ</label>
+                                                    <input type="text" class="form-control"
+                                                        placeholder="หัวข้อตัวขี้วัด" required>
+                                                </div>
+                                                <div class="form-group col-md-2">
+                                                    <label class="newFont">ผู้รับผิดชอบ</label>
+                                                    <select class="form-control">
+                                                        <optgroup class="newFont">
+                                                            <option>เลือกผู้รับผิดชอบ</option>
+                                                            <option>ทีมดูแลเพจ</option>
+                                                            <option>เกษมาพร</option>
+                                                            <option>ปรีชา</option>
+                                                            <option>อาภรณ์</option>
+                                                        </optgroup>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group col-md-2">
+                                                    <label class="newFont">หน่วยนับ</label>
+
+                                                    <input type="text" class="form-control" placeholder="หน่วยนับ"
+                                                        required>
+
+                                                </div>
+                                                <div class="form-group col-md-9"></div>
+
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary"
+                                                        data-dismiss="modal">
+                                                        <h7 class="newFont">ยกเลิก</h7>
+                                                    </button>
+                                                    <button type="button" class="btn btn-primary">
+                                                        <h7 class="newFont">บันทึก</h7>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade" id="deleteindicator" tabindex="-1" role="dialog" data-backdrop="static"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h2 class="modal-title newFont">ดาวน์โหลดตัวชี้วัด</h2>
+                                        <h2 class="modal-title newFont">ลบตัวชี้วัด</h2>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        <p class="newFont">ต้องการดาวน์โหลดตัวชี้วัดนี้หรือไม่</p>
+                                        <p class="newFont">ต้องการลบตัวชี้วัดนี้หรือไม่</p>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary newFont"

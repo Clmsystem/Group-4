@@ -1,9 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\Sec3SaveData;
-use App\Http\Controllers\Sec4SaveData;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,14 +10,13 @@ use App\Http\Controllers\Sec4SaveData;
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
+ */
 
 Route::get('/', function () {
     return view('login');
 });
 
 // Route::post('/login', [LoginController::class, 'index'])->name('login');
-
 
 // Route::post('/Valid', [LoginController::class,'index'],function ($argv){
 
@@ -40,6 +36,10 @@ Route::get('/sec3search', function () {
     return view('sec3.sec3search');
 });
 
+Route::get('/sec3dashboard', function () {
+    return view('sec3.sec3dashboard');
+});
+
 Route::get('/sec4savedata', function () {
     return view('sec4.savedata');
 });
@@ -51,7 +51,9 @@ Route::get('/sec4addind', function () {
 Route::get('/sec4search', function () {
     return view('sec4.sec4search');
 });
-
+Route::get('/sec4dashboard', function () {
+    return view('sec4.sec4dashboard');
+});
 
 Route::post('/index', function () {
     return view('index');
