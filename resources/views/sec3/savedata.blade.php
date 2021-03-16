@@ -41,66 +41,57 @@
         <div class="container-fluid content-wrapper">
           <div class="row">
             <div class="col-md-12 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body">
-                  <h3 class="newFont">ส่วนที่ 3 ตัวชี้วัดผลการปฏิบัติงานตามภารกิจของหน่วยงาน</h3>
-                  <p class="card-description"></p>
-                  <form class="forms-sample">
-                    <div class="form-group row">
-                      <div class="col-md-2">
-                        <label for="exampleInputUsername2" class="col-form-label"><b>ตัวชี้วัด</b></label>
-                      </div>
-                      <div class="col-md-2">
-                        <label for="exampleInputUsername2" class="col-form-label"><b>ผล</b></label>
-                      </div>
-                      <div class="col-md-6">
-                        <label for="exampleInputUsername2" class="col-form-label"><b>ผลการดำเนินงาน</b></label>
-                      </div>
-                    </div>
-                    <div class="form-group row">
-                      <div class="col-md-2">
-                        <div>จำนวนหนังสือต่อนักศึกษา *</div>
-                      </div>
-                      <div class="col-md-2">
-                        <input type="text" class="form-control" id="exampleInputUsername2" placeholder=""/>
-                      </div>
-                      <div class="col-md-6">
-                        <input type="text" class="form-control" id="exampleInputUsername2" placeholder=""/>
-                      </div>
-                      <div class="col-md-2">
-                        <button class="btn btn-gradient-success newFont" data-toggle="modal" data-target="#editindicator"><i class="mdi mdi-grease-pencil launch-modal"></i></button>
-                      </div>
-                    </div>
-                    <div class="form-group row">
-                      <div class="col-md-2">
-
-                        <div>จำนวนหนังสือต่ออาจารย์ *</div>
-                      </div>
-                      <!-- <div class="col-md-2">
-
-                        <input type="text" class="form-control" id="exampleInputUsername2" placeholder="">
-                      </div> -->
-                      <!-- <div class="col-md-2">
-
-                        <input type="text" class="form-control" id="exampleInputUsername2" placeholder="">
-                      </div> -->
-                      <div class="col-md-2">
-                        <input type="text" class="form-control" id="exampleInputUsername2" placeholder="">
-                      </div>
-                      <div class="col-md-6">
-                        <input type="text" class="form-control" id="exampleInputUsername2" placeholder="">
-                      </div>
-                      <div class="col-md-2">
-                        <button class="btn btn-gradient-success newFont" data-toggle="modal" data-target="#editindicator"><i class="mdi mdi-grease-pencil launch-modal"></i></button>
-                      </div>
-                    </div>
-                    <button type="submit" class="btn btn-gradient-primary mr-2 newFont">บันทึก</button>
-                    <button class="btn btn-light newFont">ยกเลิก</button>
-                  </form>
-                </div>
+              <div class="page-header">
+                <h3 class="newFont">ผลการปฏิบัติงานตามภารกิจของหน่วยงาน</h3>
               </div>
             </div>
-            <!-- ui edit -->
+
+            
+            <div class="col-md-12 grid-margin stretch-card"> 
+              <div class="card">
+                <div class="card-body">
+                  <div class="col-md-12">
+                    <table class="table table-bordered newFont">
+                      <thead>
+                        <tr class="d-flex">
+                          <th class="col-sm-3" scope="col">
+                            <h7 class="newFont">ตัวชี้วัด</h7>
+                          </th>
+                          <th class="col-sm-1" scope="col">
+                            <h7 class="newFont">หน่วยนับ</h7>
+                          </th>
+                          <th class="col-sm-1" scope="col">
+                            <h7 class="newFont">ผล</h7>
+                          </th>
+                          <th class="col-sm-5" scope="col">
+                            <h7 class="newFont">ผลการดำเนินงาน</h7>
+                          </th>
+                          <th class="col-sm-2" scope="col">แก้ไข</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="d-flex">
+                        <td class="col-sm-3"> จำนวนหนังสือต่อนักศึกษา * </td>
+                        <th class="col-sm-1"> เล่ม/คน </th>
+                        <td class="col-sm-1">  </td>
+                        <td class="col-sm-5">  </td>
+                        <td class="col-sm-2"><button class="btn btn-gradient-success newFont" data-toggle="modal" data-target="#editindicator"><i class="mdi mdi-grease-pencil launch-modal"></i></button>
+                        </td>
+                      </tr>
+                      <tr class="d-flex">
+                        <td class="col-sm-3"> จำนวนหนังสือต่ออาจารย์ * </td>
+                        <th class="col-sm-1"> เล่ม/คน </th>
+                        <td class="col-sm-1"> </td>
+                        <td class="col-sm-5"> </td>
+                        <td class="col-sm-2"><button class="btn btn-gradient-success newFont" data-toggle="modal" data-target="#editindicator"><i class="mdi mdi-grease-pencil launch-modal"></i></button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div> 
+            <!--box edit -->
             <div class="modal fade" id="editindicator" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div class="modal-dialog modal-xl" role="document">
                 <div class="modal-content">
@@ -116,13 +107,16 @@
                         </div>
 
                         <div class="form-group col-md-2">
+                          <label class="newFont">หน่วยนับ</label>
+                          <input type="text" class="form-control" placeholder="เล่ม/คน">
+                          </div>
+                        <div class="form-group col-md-2">
                           <label class="newFont">ผล</label>
                           <input type="text" class="form-control" placeholder="ผล" required>
                         </div>
-                      </div>
-                      <div class="form-group col-md-6">
+                        <div class="form-group col-md-4">
                           <label class="newFont">ผลการดำเนินงาน</label>
-                          <input type="text" class="form-control" placeholder="ผล" required>
+                          <input type="text" class="form-control" placeholder="ผลการดำเนินงาน" required>
                         </div>
                       </div>
                     </form>
@@ -142,7 +136,7 @@
             <!-- partial:partials/_footer.html -->
             @include('partials.footer')
             <!-- partial -->
-          </div>
+          
         </div>
       </div>
     </div>
