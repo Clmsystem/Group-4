@@ -25,6 +25,9 @@
   }
 </style>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
 <body>
   <div class="container-scroller newFont">
     <!-- partial:partials/_navbar.html -->
@@ -46,24 +49,26 @@
                     <div class="form-group row">
                       <div class="col-md-2">
                         <label for="exampleInputUsername2" class="col-form-label"><b>ตัวชี้วัด</b></label>
-                        <div>จำนวนหนังสือต่อนักศึกษา *</div>
-                      </div>
-                      <!-- <div class="col-md-2">
-                        <label for="exampleInputUsername2" class="col-form-label"><b>หน่วยนับ</b></label>
-                        <input type="text" class="form-control" id="exampleInputUsername2" placeholder="">
-                      </div> -->
-
-                      <div class="col-md-2">
-                        <label for="exampleInputUsername2" class="col-form-label"><b>แผน</b></label>
-                        <input type="text" class="form-control" id="exampleInputUsername2" placeholder="">
                       </div>
                       <div class="col-md-2">
                         <label for="exampleInputUsername2" class="col-form-label"><b>ผล</b></label>
-                        <input type="text" class="form-control" id="exampleInputUsername2" placeholder="">
                       </div>
                       <div class="col-md-6">
                         <label for="exampleInputUsername2" class="col-form-label"><b>ผลการดำเนินงาน</b></label>
-                        <input type="text" class="form-control" id="exampleInputUsername2" placeholder="">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <div class="col-md-2">
+                        <div>จำนวนหนังสือต่อนักศึกษา *</div>
+                      </div>
+                      <div class="col-md-2">
+                        <input type="text" class="form-control" id="exampleInputUsername2" placeholder=""/>
+                      </div>
+                      <div class="col-md-6">
+                        <input type="text" class="form-control" id="exampleInputUsername2" placeholder=""/>
+                      </div>
+                      <div class="col-md-2">
+                        <button class="btn btn-gradient-success newFont" data-toggle="modal" data-target="#editindicator"><i class="mdi mdi-grease-pencil launch-modal"></i></button>
                       </div>
                     </div>
                     <div class="form-group row">
@@ -71,22 +76,22 @@
 
                         <div>จำนวนหนังสือต่ออาจารย์ *</div>
                       </div>
-                      <div class="col-md-2">
+                      <!-- <div class="col-md-2">
 
                         <input type="text" class="form-control" id="exampleInputUsername2" placeholder="">
-                      </div>
+                      </div> -->
                       <!-- <div class="col-md-2">
 
                         <input type="text" class="form-control" id="exampleInputUsername2" placeholder="">
                       </div> -->
                       <div class="col-md-2">
-
                         <input type="text" class="form-control" id="exampleInputUsername2" placeholder="">
                       </div>
-
                       <div class="col-md-6">
-
                         <input type="text" class="form-control" id="exampleInputUsername2" placeholder="">
+                      </div>
+                      <div class="col-md-2">
+                        <button class="btn btn-gradient-success newFont" data-toggle="modal" data-target="#editindicator"><i class="mdi mdi-grease-pencil launch-modal"></i></button>
                       </div>
                     </div>
                     <button type="submit" class="btn btn-gradient-primary mr-2 newFont">บันทึก</button>
@@ -95,29 +100,52 @@
                 </div>
               </div>
             </div>
+            <!-- ui edit -->
+            <div class="modal fade" id="editindicator" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-xl" role="document">
+                <div class="modal-content">
+                  <div class="modal-body">
+                    <br>
+                    <h2 class="modal-title newFont" id="exampleModalLabel">แก้ไขผลการปฏิบัติงาน</h2>
+                    <form class="forms-sample">
+                      <hr><br>
+                      <div class="row">
+                        <div class="form-group col-md-4">
+                          <label class="newFont">ตัวชี้วัด</label>
+                          <input type="text" class="form-control" placeholder="ตัวชี้วัด" value="" required>
+                        </div>
+
+                        <div class="form-group col-md-2">
+                          <label class="newFont">ผล</label>
+                          <input type="text" class="form-control" placeholder="ผล" required>
+                        </div>
+                      </div>
+                      <div class="form-group col-md-6">
+                          <label class="newFont">ผลการดำเนินงาน</label>
+                          <input type="text" class="form-control" placeholder="ผล" required>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                      <h7 class="newFont">ยกเลิก</ย>
+                    </button>
+                    <button type="button" class="btn btn-primary">
+                      <h7 class="newFont">บันทึก</h7>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
             <!-- content-wrapper ends -->
             <!-- partial:partials/_footer.html -->
             @include('partials.footer')
             <!-- partial -->
           </div>
-          <!-- main-panel ends -->
         </div>
-        <!-- page-body-wrapper ends -->
       </div>
-      <!-- container-scroller -->
-      <!-- plugins:js -->
-      <script src="assets/vendors/js/vendor.bundle.base.js"></script>
-      <!-- endinject -->
-      <!-- Plugin js for this page -->
-      <script src="assets/vendors/chart.js/Chart.min.js"></script>
-      <!-- End plugin js for this page -->
-      <!-- inject:js -->
-      <script src="assets/js/off-canvas.js"></script>
-      <script src="assets/js/hoverable-collapse.js"></script>
-      <script src="assets/js/misc.js"></script>
-      <!-- endinject -->
-      <!-- Custom js for this page -->
-      <script src="assets/js/dashboard.js"></script>
-      <script src="assets/js/todolist.js"></script>
-      <!-- End custom js for this page -->
+    </div>
+  </div>
+
 </body>
