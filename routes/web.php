@@ -40,12 +40,12 @@ Route::get('/', function () {
 Route::get('/sec3savedata', [Sec3SaveData::class, 'index']);
 Route::get('/sec3addind', [Sec3AddInd::class, 'index']);
 Route::get('/sec3search', [Sec3Search::class, 'index']);
-Route::get('/sec3confirm', [Sec3Confirm::class, 'index']);
+// Route::get('/sec3confirm', [Sec3Confirm::class, 'index']);
 
 Route::get('/sec4savedata', [Sec4SaveData::class, 'index']);
 Route::get('/sec4addind', [Sec4AddInd::class, 'index']);
 Route::get('/sec4search', [Sec4Search::class, 'index']);
-Route::get('/sec4confirm', [Sec4Confirm::class, 'index']);
+// Route::get('/sec4confirm', [Sec4Confirm::class, 'index']);
 
 // Route::get('/sec3addind', function () {
 //     return view('sec3.addind');
