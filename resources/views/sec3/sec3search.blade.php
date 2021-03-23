@@ -1,35 +1,39 @@
 @include('partials.header')
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Mitr&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Mitr&display=swap');
 
-.newFont {
-    font-family: 'Mitr', sans-serif;
-}
+    .newFont {
+        font-family: 'Mitr', sans-serif;
+    }
 
-.button-position {
-    float: right;
-    margin: -8px;
-}
+    .button-position {
+        float: right;
+        margin: -8px;
+    }
 
-.btns {
-    padding: 0.9rem 2em;
-    font-size: 0.875rem;
-}
+    .btns {
+        padding: 0.9rem 2em;
+        font-size: 0.875rem;
+    }
 
-td {
-    text-align: center;
-}
+    td {
+        text-align: center;
+    }
 
-td.break {
-    word-wrap: break-word;
-    word-break: break-all;
-    white-space: normal;
-}
+    .textleft {
+        text-align: left;
+    }
+
+    td.break {
+        word-wrap: break-word;
+        word-break: break-all;
+        white-space: normal;
+    }
 
 
-th {
-    text-align: center;
-}
+    th {
+        text-align: center;
+    }
 </style>
 <!-- ------------------------------------------  Link Script Jquery-  --------------------------------------------->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -92,9 +96,7 @@ th {
                                                 </select>
                                             </div>
                                             <div class="col-sm-3">
-                                                <button class="btn btn-gradient-primary newFont" data-toggle="modal"
-                                                    data-target=""><i
-                                                        class="mdi mdi-account-search-outline"></i></button>
+                                                <button class="btn btn-gradient-primary newFont" data-toggle="modal" data-target=""><i class="mdi mdi-account-search-outline"></i></button>
                                             </div>
                                         </div>
                                     </div>
@@ -109,6 +111,10 @@ th {
                                     <div class="container">
                                         <h3 class="newFont"> ข้อมูลผลการดำเนินงานย้อนหลัง ส่วนที่3 </h3>
                                     </div>
+                                    <div class="button-position">
+                                        <button class="btn btn-gradient-warning newFont" data-toggle="modal" data-target="#downloadindicator"><i class="mdi mdi-cloud-download"></i>
+                                        </button>
+                                    </div>
                                     <br>
                                     <br>
                                     <div class="row">
@@ -120,11 +126,11 @@ th {
                                                         <th class="col-sm-1" scope="col">
                                                             <h7 class="newFont">ลำดับ</h7>
                                                         </th>
-                                                        <th class="col-sm-3" scope="col">
+                                                        <th class="col-sm-4" scope="col">
                                                             <h7 class="newFont">ตัวชี้วัด</h7>
                                                         </th>
                                                         <th class="col-sm-2" scope="col">
-                                                            <h7 class="newFont">แผน</h7>
+                                                            <h7 class="newFont">แผนตัวชี้วัด</h7>
                                                         </th>
                                                         <th class="col-sm-1" scope="col">
                                                             <h7 class="newFont">หน่วยนับ</h7>
@@ -135,40 +141,21 @@ th {
 
                                                     </tr>
                                                 </thead>
+                                                @foreach ($ob as $data)
                                                 <tbody>
                                                     <tr class="d-flex">
-                                                        <td class="col-sm-1"> 1 </td>
-                                                        <td class="col-sm-3 break"> จำนวนหนังสือต่อนักศึกษา* </td>
-                                                        <td class="col-sm-2 break"> แผนตัวชี้วัด </td>
-                                                        <td class="col-sm-1"> เล่ม/คน </td>
-                                                        <td class="col-sm-2"> อาภรณ์ </td>
-                                                        <td class="col-sm-3"><button
-                                                                class="btn btn-gradient-warning newFont"
-                                                                data-toggle="modal" data-target="#downloadindicator"><i
-                                                                    class="mdi mdi-cloud-download"></i>
-                                                            </button>
-                                                            <button class="btn btn-gradient-info newFont"
-                                                                data-toggle="modal" data-target="#infoindicator"><i
-                                                                    class="mdi mdi-chart-areaspline"></i></button>
+                                                        <td class="col-sm-1"> {{$data->indicator_result_ID}} </td>
+                                                        <td class="col-sm-4 break textleft"> {{$data->indicator_result_name}} </td>
+                                                        <td class="col-sm-2 break textleft"> แผนตัวชี้วัด </td>
+                                                        <td class="col-sm-1 textleft"> เล่ม/คน </td>
+                                                        <td class="col-sm-2 textleft"> อาภรณ์ </td>
+                                                        <td class="col-sm-2">
+                                                            <button class="btn btn-gradient-info newFont" data-toggle="modal" data-target="#infoindicator"><i class="mdi mdi-chart-areaspline"></i></button>
                                                         </td>
                                                     </tr>
-                                                    <tr class="d-flex">
-                                                        <td class="col-sm-1"> 2 </td>
-                                                        <td class="col-sm-3 break"> จำนวนหนังสือต่อนักศึกษา * </td>
-                                                        <td class="col-sm-2 break"> แผนตัวชี้วัด </td>
-                                                        <td class="col-sm-1"> เล่ม/คน </td>
-                                                        <td class="col-sm-2"> อาภรณ์ </td>
-                                                        <td class="col-sm-3"><button
-                                                                class="btn btn-gradient-warning newFont"
-                                                                data-toggle="modal" data-target="#downloadindicator"><i
-                                                                    class="mdi mdi-cloud-download"></i>
-                                                            </button>
-                                                            <button class="btn btn-gradient-info newFont"
-                                                                data-toggle="modal" data-target="#infoindicator"><i
-                                                                    class="mdi mdi-chart-areaspline"></i></button>
-                                                        </td>
-                                                    </tr>
+
                                                 </tbody>
+                                                @endforeach
                                             </table>
                                             <!-- <div class="col-md-1"></div> -->
                                         </div>
@@ -180,8 +167,7 @@ th {
                         <!-- ------------------------------------------  แสดงตัวชี้วัด end-  --------------------------------------------->
 
                         <!-- ------------------------------------------  แสดงข้อมูลตัวชี้วัด ---------------------------------------------------->
-                        <div class="modal fade" id="infoindicator" tabindex="-1" role="dialog" data-backdrop="static"
-                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal fade" id="infoindicator" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-xl" role="document">
                                 <div class="modal-content">
                                     <div class="modal-body">
@@ -192,8 +178,7 @@ th {
                                             <div class="row">
                                                 <div class="form-group col-md-8">
                                                     <label class="newFont">ตัวชี้วัด</label>
-                                                    <input type="text" class="form-control" placeholder="ตัวชี้วัด"
-                                                        value="" required>
+                                                    <input type="text" class="form-control" placeholder="ตัวชี้วัด" value="" required>
                                                 </div>
                                                 <div class="form-group col-md-2">
                                                     <label class="newFont">ผู้รับผิดชอบ</label>
@@ -209,8 +194,7 @@ th {
                                                 </div>
                                                 <div class="form-group col-md-2">
                                                     <label class="newFont">หน่วยนับ</label>
-                                                    <input type="text" class="form-control" placeholder="หน่วยนับ"
-                                                        required>
+                                                    <input type="text" class="form-control" placeholder="หน่วยนับ" required>
                                                 </div>
                                             </div>
                                         </form>
@@ -228,8 +212,7 @@ th {
                         </div>
 
                         <!-- ดาวน์โหลดตัวชี้วัด -->
-                        <div class="modal fade" id="downloadindicator" tabindex="-1" role="dialog"
-                            data-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal fade" id="downloadindicator" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -242,8 +225,7 @@ th {
                                         <p class="newFont">ต้องการดาวน์โหลดตัวชี้วัดนี้หรือไม่</p>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary newFont"
-                                            data-dismiss="modal">ยกเลิก</button>
+                                        <button type="button" class="btn btn-secondary newFont" data-dismiss="modal">ยกเลิก</button>
                                         <button type="button" class="btn btn-primary newFont">ยืนยัน</button>
                                     </div>
                                 </div>

@@ -7,11 +7,11 @@ use Illuminate\Support\Facades\DB;
 
 
 
-class Sec3SaveData extends Controller
+class Sec4AddInd extends Controller
 {
     public function index()
     {
-        $ob = DB::table('indicator_result')->get();
-        return view('sec3.savedata', compact('ob'));
+        $ob = DB::table('indicator_stratetegic')->get();
+        return view('sec4.addind', compact('ob'));
     }
 }

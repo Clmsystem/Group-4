@@ -1,28 +1,32 @@
 @include('partials.header')
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Mitr&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Mitr&display=swap');
 
-.newFont {
-    font-family: 'Mitr', sans-serif;
-}
+    .newFont {
+        font-family: 'Mitr', sans-serif;
+    }
 
-.button-position {
-    float: right;
-    margin: -8px;
-}
+    .button-position {
+        float: right;
+        margin: -8px;
+    }
 
-.btns {
-    padding: 0.9rem 2em;
-    font-size: 0.875rem;
-}
+    .btns {
+        padding: 0.9rem 2em;
+        font-size: 0.875rem;
+    }
 
-td {
-    text-align: center;
-}
+    td {
+        text-align: center;
+    }
 
-th {
-    text-align: center;
-}
+    .textleft {
+        text-align: left;
+    }
+
+    th {
+        text-align: center;
+    }
 </style>
 <!-- ------------------------------------------  Link Script Jquery-  --------------------------------------------->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -84,9 +88,7 @@ th {
                                                 </select>
                                             </div>
                                             <div class="col-sm-3">
-                                                <button class="btn btn-gradient-primary newFont" data-toggle="modal"
-                                                    data-target=""><i
-                                                        class="mdi mdi-account-search-outline"></i></button>
+                                                <button class="btn btn-gradient-primary newFont" data-toggle="modal" data-target=""><i class="mdi mdi-account-search-outline"></i></button>
                                             </div>
                                         </div>
                                     </div>
@@ -119,13 +121,8 @@ th {
                                                         <td class="col-sm-4"> จำนวนหนังสือต่อนักศึกษา * </td>
                                                         <td class="col-sm-2"> เล่ม/คน </td>
                                                         <td class="col-sm-2"> อาภรณ์ </td>
-                                                        <td class="col-sm-3"><button
-                                                                class="btn btn-gradient-success newFont"
-                                                                data-toggle="modal" data-target="#editindicator"><i
-                                                                    class="mdi mdi-grease-pencil launch-modal"></i></button>
-                                                            <button class="btn btn-gradient-danger newFont"
-                                                                data-toggle="modal" data-target="#deleteindicator"><i
-                                                                    class="mdi mdi-delete"></i></button>
+                                                        <td class="col-sm-3"><button class="btn btn-gradient-success newFont" data-toggle="modal" data-target="#editindicator"><i class="mdi mdi-grease-pencil launch-modal"></i></button>
+                                                            <button class="btn btn-gradient-danger newFont" data-toggle="modal" data-target="#deleteindicator"><i class="mdi mdi-delete"></i></button>
                                                         </td>
                                                     </tr>
                                                     <tr class="d-flex">
@@ -133,13 +130,8 @@ th {
                                                         <td class="col-sm-4"> จำนวนหนังสือต่ออาจารย์ * </td>
                                                         <td class="col-sm-2"> เล่ม/คน </td>
                                                         <td class="col-sm-2"> อาภรณ์ </td>
-                                                        <td class="col-sm-3"><button
-                                                                class="btn btn-gradient-success newFont"
-                                                                data-toggle="modal" data-target="#editindicator"><i
-                                                                    class="mdi mdi-grease-pencil launch-modal"></i></button>
-                                                            <button class="btn btn-gradient-danger newFont"
-                                                                data-toggle="modal" data-target="#deleteindicator"><i
-                                                                    class="mdi mdi-delete"></i></button>
+                                                        <td class="col-sm-3"><button class="btn btn-gradient-success newFont" data-toggle="modal" data-target="#editindicator"><i class="mdi mdi-grease-pencil launch-modal"></i></button>
+                                                            <button class="btn btn-gradient-danger newFont" data-toggle="modal" data-target="#deleteindicator"><i class="mdi mdi-delete"></i></button>
                                                         </td>
                                                     </tr>
                                                 </tbody>
@@ -154,8 +146,7 @@ th {
                         <!-- ------------------------------------------  แสดงตัวชี้วัด end-  --------------------------------------------->
 
                         <!-- ------------------------------------------  แก้ไขตัวชี้วัด ---------------------------------------------------->
-                        <div class="modal fade" id="editindicator" tabindex="-1" role="dialog" data-backdrop="static"
-                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal fade" id="editindicator" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-xl" role="document">
                                 <div class="modal-content">
                                     <div class="modal-body">
@@ -166,8 +157,7 @@ th {
                                             <div class="row">
                                                 <div class="form-group col-md-8">
                                                     <label class="newFont">ตัวชี้วัด</label>
-                                                    <input type="text" class="form-control" placeholder="ตัวชี้วัด"
-                                                        value="" required>
+                                                    <input type="text" class="form-control" placeholder="ตัวชี้วัด" value="" required>
                                                 </div>
                                                 <div class="form-group col-md-2">
                                                     <label class="newFont">ผู้รับผิดชอบ</label>
@@ -183,8 +173,7 @@ th {
                                                 </div>
                                                 <div class="form-group col-md-2">
                                                     <label class="newFont">หน่วยนับ</label>
-                                                    <input type="text" class="form-control" placeholder="หน่วยนับ"
-                                                        required>
+                                                    <input type="text" class="form-control" placeholder="หน่วยนับ" required>
                                                 </div>
                                             </div>
                                         </form>
@@ -201,8 +190,7 @@ th {
                             </div>
                         </div>
 
-                        <div class="modal fade" id="addindicator" tabindex="-1" role="dialog" data-backdrop="static"
-                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal fade" id="addindicator" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-xl" role="document">
                                 <div class="modal-content">
                                     <div class="modal-body">
@@ -213,8 +201,7 @@ th {
                                             <div class="row">
                                                 <div class="form-group col-md-8">
                                                     <label class="newFont">หัวข้อ</label>
-                                                    <input type="text" class="form-control"
-                                                        placeholder="หัวข้อตัวขี้วัด" required>
+                                                    <input type="text" class="form-control" placeholder="หัวข้อตัวขี้วัด" required>
                                                 </div>
                                                 <div class="form-group col-md-2">
                                                     <label class="newFont">ผู้รับผิดชอบ</label>
@@ -231,15 +218,13 @@ th {
                                                 <div class="form-group col-md-2">
                                                     <label class="newFont">หน่วยนับ</label>
 
-                                                    <input type="text" class="form-control" placeholder="หน่วยนับ"
-                                                        required>
+                                                    <input type="text" class="form-control" placeholder="หน่วยนับ" required>
 
                                                 </div>
                                                 <div class="form-group col-md-9"></div>
 
                                                 <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary"
-                                                        data-dismiss="modal">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">
                                                         <h7 class="newFont">ยกเลิก</h7>
                                                     </button>
                                                     <button type="button" class="btn btn-primary">
@@ -253,8 +238,7 @@ th {
                             </div>
                         </div>
 
-                        <div class="modal fade" id="deleteindicator" tabindex="-1" role="dialog" data-backdrop="static"
-                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal fade" id="deleteindicator" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -267,8 +251,7 @@ th {
                                         <p class="newFont">ต้องการลบตัวชี้วัดนี้หรือไม่</p>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary newFont"
-                                            data-dismiss="modal">ยกเลิก</button>
+                                        <button type="button" class="btn btn-secondary newFont" data-dismiss="modal">ยกเลิก</button>
                                         <button type="button" class="btn btn-primary newFont">ยืนยัน</button>
                                     </div>
                                 </div>

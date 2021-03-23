@@ -20,6 +20,16 @@
         text-align: center;
     }
 
+    .textleft {
+        text-align: left;
+    }
+
+    td.break {
+        word-wrap: break-word;
+        /* word-break: break-all; */
+        white-space: normal;
+    }
+
     th {
         text-align: center;
     }
@@ -66,36 +76,32 @@
                                                         <th class="col-sm-1" scope="col">
                                                             <h7 class="newFont">ลำดับ</h7>
                                                         </th>
-                                                        <th class="col-sm-6" scope="col">
-                                                            <h7 class="newFont">ตัวชี้วัด</h7>
+                                                        <th class="col-sm-4" scope="col">
+                                                            <h7 class="newFont">ตัวชี้วัดตามคำรับรอง</h7>
+                                                        </th>
+                                                        <th class="col-sm-3" scope="col">
+                                                            <h7 class="newFont">เป้าหมายตามคำรับรอง</h7>
                                                         </th>
                                                         <th class="col-sm-2" scope="col">
                                                             <h7 class="newFont">ผู้รับผิดชอบ</h7>
                                                         </th>
-                                                        <th class="col-sm-3" scope="col">แก้ไข/ลบ</th>
+                                                        <th class="col-sm-2" scope="col">แก้ไข</th>
                                                     </tr>
                                                 </thead>
+                                                @foreach ($ob as $data)
                                                 <tbody>
                                                     <tr class="d-flex">
-                                                        <td class="col-sm-1"> 1 </td>
-                                                        <td class="col-sm-6"> WU2-2-3 ร้อยละความพึงพอใจของผู้รับบริการ (นักศึกษา บุคลากรและประชาชน)
+                                                        <td class="col-sm-1"> {{$data->indicator_stratetegic_id}} </td>
+                                                        <td class="col-sm-4 break textleft"> {{$data->indicator_stratetegic_name}}
                                                         </td>
-                                                        <td class="col-sm-2"> ปรีชา </td>
-                                                        <td class="col-sm-3"><button class="btn btn-gradient-success newFont" data-toggle="modal" data-target="#editindicator"><i class="mdi mdi-grease-pencil launch-modal"></i></button>
-                                                            <button class="btn btn-gradient-danger newFont" data-toggle="modal" data-target="#deleteindicator"><i class="mdi mdi-delete"></i></button>
-                                                        </td>
-                                                    </tr>
-                                                    <tr class="d-flex">
-                                                        <td class="col-sm-1"> 2 </td>
-                                                        <td class="col-sm-6">
-                                                            WU6-2-4 จำนวนประชาชนที่เข้าถึงหลักสูตร/<br>แหล่งเรียนรู้ที่จัดการศึกษาในรูปแบบ life long learning
-                                                        </td>
-                                                        <td class="col-sm-2"> ปรีชา </td>
-                                                        <td class="col-sm-3"><button class="btn btn-gradient-success newFont" data-toggle="modal" data-target="#editindicator"><i class="mdi mdi-grease-pencil launch-modal"></i></button>
-                                                            <button class="btn btn-gradient-danger newFont" data-toggle="modal" data-target="#deleteindicator"><i class="mdi mdi-delete"></i></button>
+                                                        <td class="col-sm-3 textleft"> ร้อยละ 85 </td>
+                                                        <td class="col-sm-2 textleft"> ปรีชา </td>
+                                                        <td class="col-sm-2"><button class="btn btn-gradient-success newFont" data-toggle="modal" data-target="#editindicator"><i class="mdi mdi-grease-pencil launch-modal"></i></button>
+
                                                         </td>
                                                     </tr>
                                                 </tbody>
+                                                @endforeach
                                             </table>
                                             <!-- <div class="col-md-1"></div> -->
                                         </div>
@@ -116,23 +122,17 @@
                                         <form class="forms-sample">
                                             <div class="row">
                                                 <div class="form-group col-md-12">
-                                                    <label class="newFont">หัวข้อ</label>
+                                                    <label class="newFont">ตัวชี้วัดตามคำรับรอง</label>
                                                     <input type="text" class="form-control" placeholder="หัวข้อตัวขี้วัด" required>
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="form-group col-md-12">
-                                                    <label class="newFont">แผน</label>
+                                                    <label class="newFont">เป้าหมายตามคำรับรอง</label>
                                                     <input type="text" class="form-control" placeholder="แผนตัวชี้วัด" required>
                                                 </div>
                                             </div>
                                             <div class="row">
-                                                <div class="form-group col-md-6">
-                                                    <label class="newFont">หน่วยนับ</label>
-
-                                                    <input type="text" class="form-control" placeholder="หน่วยนับ" required>
-
-                                                </div>
                                                 <div class="form-group col-md-6">
                                                     <label class="newFont">ผู้รับผิดชอบ</label>
                                                     <select class="form-control">
@@ -172,23 +172,17 @@
                                         <form class="forms-sample">
                                             <div class="row">
                                                 <div class="form-group col-md-12">
-                                                    <label class="newFont">หัวข้อ</label>
+                                                    <label class="newFont">ตัวชี้วัดตามคำรับรอง</label>
                                                     <input type="text" class="form-control" placeholder="หัวข้อตัวขี้วัด" required>
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="form-group col-md-12">
-                                                    <label class="newFont">แผน</label>
+                                                    <label class="newFont">เป้าหมายตามคำรับรอง</label>
                                                     <input type="text" class="form-control" placeholder="แผนตัวชี้วัด" required>
                                                 </div>
                                             </div>
                                             <div class="row">
-                                                <div class="form-group col-md-6">
-                                                    <label class="newFont">หน่วยนับ</label>
-
-                                                    <input type="text" class="form-control" placeholder="หน่วยนับ" required>
-
-                                                </div>
                                                 <div class="form-group col-md-6">
                                                     <label class="newFont">ผู้รับผิดชอบ</label>
                                                     <select class="form-control">
