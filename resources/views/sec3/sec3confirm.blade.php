@@ -54,7 +54,7 @@
                     <div class="row">
                         <div class="col-md-12 grid-margin stretch-card">
                             <div class="page-header">
-                                <h3 class="newFont">ฝ่ายส่งเสริมการเรียนรู้และให้บริการการศึกษา</h3>
+                                <h3 class="newFont">ยืนยันตัวชี้วัด</h3>
                             </div>
                         </div>
 
@@ -62,10 +62,6 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h3 class="newFont"> ส่วนที่ 3 ตัวชี้วัดผลการปฏิบัติงานตามภารกิจของหน่วยงาน </h3>
-                                    <div class="button-position">
-                                        <button type="submit" class="btn btn-gradient-primary mr-2 newFont" data-toggle="modal" data-target="#addindicator"><i class="mdi mdi-library-plus"></i> เพิ่มตัวชี้วัด</button>
-                                    </div>
-                                    <br>
                                     <br>
                                     <div class="row">
                                         <!-- <div class="col-md-1"></div> -->
@@ -88,7 +84,7 @@
                                                         <th class="col-sm-2" scope="col">
                                                             <h7 class="newFont">ผู้รับผิดชอบ</h7>
                                                         </th>
-                                                        <th class="col-sm-2" scope="col">แก้ไข</th>
+                                                        <th class="col-sm-2" scope="col"></th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -99,7 +95,7 @@
                                                         <td class="col-sm-2 textleft"> เล่ม/คน </td>
                                                         <td class="col-sm-1"> 1 </td>
                                                         <td class="col-sm-2 textleft"> อาภรณ์ </td>
-                                                        <td class="col-sm-2"><button class="btn btn-gradient-success newFont" data-toggle="modal" data-target="#editindicator"><i class="mdi mdi-grease-pencil launch-modal"></i></button>
+                                                        <td class="col-sm-2"><button class="btn btn-gradient-success newFont" data-toggle="modal" >ยืนยัน</button>
 
                                                     </tr>
 
