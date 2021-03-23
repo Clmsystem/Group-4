@@ -67,6 +67,22 @@ window.onload = function() {
         }]
     });
     chart.render();
+    var chart = new CanvasJS.Chart("chartPie", {
+        animationEnabled: true,
+        title: {
+            text: "Usage Share of Desktop Browsers"
+        },
+        subtitles: [{
+            text: "November 2017"
+        }],
+        data: [{
+            type: "pie",
+            yValueFormatString: "#,##0.00\"%\"",
+            indexLabel: "{label} ({y})",
+            dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
+        }]
+    });
+    chart.render();
 
 }
 </script>
@@ -90,12 +106,26 @@ window.onload = function() {
                                 <h3 class="newFont">Dashboard</h3>
                             </div>
                         </div>
-
-                        <div class="col-12 grid-margin stretch-card">
+                        <div class="col-6 grid-margin stretch-card">
                             <div class="card">
                                 <div class="card-body">
                                     <div id="chartContainer" style="height: 370px; width: 100%;"></div>
                                     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 grid-margin stretch-card">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div id="chartPie" style="height: 370px; width: 100%;"></div>
+                                    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 grid-margin stretch-card">
+                            <div class="card">
+                                <div class="card-body">
                                     <div class="container">
                                         <h3 class="newFont"> ค้นหาผลการดำเนินงานย้อนหลัง ส่วนที่3 </h3>
                                         <label class="newFont">ค้นหา</label>
