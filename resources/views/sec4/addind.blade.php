@@ -169,11 +169,12 @@
                                         <br>
                                         <h2 class="newFont">สร้างตัวชี้วัด</h2><br>
                                         <hr><br>
-                                        <form class="forms-sample">
+                                        <form class="forms-sample" action="{{route('sec4addInd')}}" method="post">
+                                            @csrf
                                             <div class="row">
                                                 <div class="form-group col-md-12">
                                                     <label class="newFont">ตัวชี้วัดตามคำรับรอง</label>
-                                                    <input type="text" class="form-control" placeholder="หัวข้อตัวขี้วัด" required>
+                                                    <input type="text" class="form-control" placeholder="หัวข้อตัวขี้วัด" name="resultname" required>
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -201,9 +202,7 @@
                                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">
                                                         <h7 class="newFont">ยกเลิก</h7>
                                                     </button>
-                                                    <button type="button" class="btn btn-primary">
-                                                        <h7 class="newFont">บันทึก</h7>
-                                                    </button>
+                                                    <input type="submit" value="บันทึก" class="btn btn-primary">
                                                 </div>
                                             </div>
                                         </form>

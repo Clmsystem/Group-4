@@ -7,6 +7,7 @@ use App\Http\Controllers\Sec3Search;
 use App\Http\Controllers\Sec4AddInd;
 use App\Http\Controllers\Sec4SaveData;
 use App\Http\Controllers\Sec4Search;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -72,6 +73,13 @@ Route::get('/sec3confirm', function () {
 // Route::get('/sec4search', function () {
 //     return view('sec4.sec4search');
 // });
+
+// Route::get('/content', [ObjectGroup1::class, 'index']);
+// Route::get('/content/{id}', [Kr::class, 'index']);
+Route::post('/sec3/add', [Sec3AddInd::class, 'addInd'])->name('sec3addInd');
+Route::post('/sec4/add', [Sec4AddInd::class, 'addInd'])->name('sec4addInd');
+Route::post('/sec3/update', [Sec3AddInd::class, 'updateInd'])->name('sec3updateInd');
+
 Route::get('/sec4dashboard', function () {
     return view('sec4.sec4dashboard');
 });
