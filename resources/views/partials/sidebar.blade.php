@@ -44,3 +44,20 @@
   </ul>
 </nav>
 <!-- partial -->
+
+<style>
+  .sizeimg {
+    /* width: 70px;
+      height: 70px; */
+    border-radius: 100%;
+    object-fit: cover;
+    margin-top: -13px;
+    margin-left: -20px
+  }
+
+  .sidebar .nav .nav-item.nav-profile .nav-link .nav-profile-image img {
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+  }
+</style>
