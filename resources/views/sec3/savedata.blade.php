@@ -57,6 +57,28 @@
               </div>
             </div>
 
+            <div class="form-group col-md-4">
+              <form action="{{route('resultshowmount')}}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <select id="client_id" type="dropdown-toggle" class="form-control" name="mount">
+                  <optgroup>
+                    <option value="1" {{ $mount == 1 ? 'selected' : '' }}>มกราคม</option>
+                    <option value="2" {{ $mount == 2 ? 'selected' : '' }}>กุมภาพันธ์</option>
+                    <option value="3" {{ $mount == 3 ? 'selected' : '' }}>มีนาคม</option>
+                    <option value="4" {{ $mount == 4 ? 'selected' : '' }}>เมษายน</option>
+                    <option value="5" {{ $mount == 5 ? 'selected' : '' }}>พฤษภาคม</option>
+                    <option value="6" {{ $mount == 6 ? 'selected' : '' }}>มิถุนายน</option>
+                    <option value="7" {{ $mount == 7 ? 'selected' : '' }}>กรกฎาคม</option>
+                    <option value="8" {{ $mount == 8 ? 'selected' : '' }}>สิงหาคม</option>
+                    <option value="9" {{ $mount == 9 ? 'selected' : '' }}>กันยายน</option>
+                    <option value="10" {{ $mount == 10 ? 'selected' : '' }}>ตุลาคม</option>
+                    <option value="11" {{ $mount == 11 ? 'selected' : '' }}>พฤศจิกายน</option>
+                    <option value="12" {{ $mount == 12 ? 'selected' : '' }}>ธันวาคม</option>
+                  </optgroup>
+                </select>
+              </form>
+            </div>
+
             <div class="col-md-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">

@@ -79,6 +79,7 @@ Route::get('/sec3confirm', function () {
 Route::post('/sec3/add', [Sec3AddInd::class, 'addInd'])->name('sec3addInd');
 Route::post('/sec4/add', [Sec4AddInd::class, 'addInd'])->name('sec4addInd');
 Route::post('/sec3/update', [Sec3AddInd::class, 'updateInd'])->name('sec3updateInd');
+Route::post('/sec3/showresultmount', [Sec3SaveData::class, 'resultShowMount'])->name('resultshowmount');
 
 Route::get('/sec4dashboard', function () {
     return view('sec4.sec4dashboard');
