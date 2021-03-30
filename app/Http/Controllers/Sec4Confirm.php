@@ -8,7 +8,7 @@ class Sec4Confirm extends Controller
 {
     public function index()
     {
-        $ob = DB::table('indicator_result')->get();
+        $ob = DB::table('indicator_stratetegic')->get();
         return view('sec4.sec4confirm', compact('ob'));
     }
 }

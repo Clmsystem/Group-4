@@ -4,14 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Session;
 
 class Sec3AddInd extends Controller
 {
     public function index()
     {
         $ob = DB::table('indicator_result')
-            // ->join('unit', 'indicator_result.unit', 'unit.id_unit')
+        // ->join('unit', 'indicator_result.unit', 'unit.id_unit')
             ->join('unit', 'indicator_result.unit', '=', 'unit.id_unit')
             ->orderBy('indicator_result_id')
             ->get();
@@ -67,7 +66,6 @@ class Sec3AddInd extends Controller
         // $data3["Employee_id_department"] = 0;
         // DB::table('autrority')->insert($data3);
 
-
         return redirect()->back()->with('sucess', 'บันทึกข้อมูลเรียบร้อย');
     }
 
@@ -78,7 +76,7 @@ class Sec3AddInd extends Controller
             ->update([
                 'indicator_result_name' => $request->newresult,
                 'plan' => $request->newplan,
-                'unit' => $request->newunit
+                'unit' => $request->newunit,
             ]);
         return redirect()->back()->with('sucess', 'บันทึกข้อมูลเรียบร้อย');
     }

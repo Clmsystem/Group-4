@@ -1,50 +1,50 @@
 @include('partials.header')
 <html>
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Mitr&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mitr&display=swap');
 
-    .newFont {
-        font-family: 'Mitr', sans-serif;
-    }
+.newFont {
+    font-family: 'Mitr', sans-serif;
+}
 
-    .button-position {
-        float: right;
-        margin: -8px;
-    }
+.button-position {
+    float: right;
+    margin: -8px;
+}
 
-    .btns {
-        padding: 0.9rem 2em;
-        font-size: 0.875rem;
-    }
+.btns {
+    padding: 0.9rem 2em;
+    font-size: 0.875rem;
+}
 
-    td {
-        text-align: center;
-    }
+td {
+    text-align: center;
+}
 
-    .textleft {
-        text-align: left;
-    }
+.textleft {
+    text-align: left;
+}
 
-    td.break {
-        word-wrap: break-word;
-        /* word-break: break-all; */
-        white-space: normal;
-    }
+td.break {
+    word-wrap: break-word;
+    /* word-break: break-all; */
+    white-space: normal;
+}
 
-    th {
-        text-align: center;
-    }
+th {
+    text-align: center;
+}
 </style>
 <!-- ------------------------------------------  Link Script Jquery-  --------------------------------------------->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script type="text/javascript">
-    function addContentToModal(id, name, plan, unit) {
-        document.getElementById('indicator_result_ID_edit').value = id;
-        document.getElementById('indicator_result_name_edit').value = name;
-        document.getElementById('plan_edit').value = plan;
-        document.getElementById('unit_edit').value = unit;
-    };
+function addContentToModal(id, name, plan, unit) {
+    document.getElementById('indicator_result_ID_edit').value = id;
+    document.getElementById('indicator_result_name_edit').value = name;
+    document.getElementById('plan_edit').value = plan;
+    document.getElementById('unit_edit').value = unit;
+};
 </script>
 
 <body>
@@ -72,7 +72,9 @@
                                 <div class="card-body">
                                     <h3 class="newFont"> ส่วนที่ 3 ตัวชี้วัดผลการปฏิบัติงานตามภารกิจของหน่วยงาน </h3>
                                     <div class="button-position">
-                                        <button type="submit" class="btn btn-gradient-primary mr-2 newFont" data-toggle="modal" data-target="#addindicator"><i class="mdi mdi-library-plus"></i> เพิ่มตัวชี้วัด</button>
+                                        <button type="submit" class="btn btn-gradient-primary mr-2 newFont"
+                                            data-toggle="modal" data-target="#addindicator"><i
+                                                class="mdi mdi-library-plus"></i> เพิ่มตัวชี้วัด</button>
                                     </div>
                                     <br>
                                     <br>
@@ -104,11 +106,16 @@
                                                     @foreach ($ob as $data)
                                                     <tr class="d-flex">
                                                         <td class="col-sm-1"> {{$data->indicator_result_ID}} </td>
-                                                        <td class="col-sm-4 break textleft"> {{$data->indicator_result_name}} </td>
+                                                        <td class="col-sm-4 break textleft">
+                                                            {{$data->indicator_result_name}} </td>
                                                         <td class="col-sm-2 textleft"> {{$data->unit_name}} </td>
                                                         <td class="col-sm-1"> {{$data->plan}} </td>
                                                         <td class="col-sm-2 textleft"> อาภรณ์ </td>
-                                                        <td class="col-sm-2"><button class="btn btn-gradient-success newFont" data-toggle="modal" data-target="#editindicator" onclick="addContentToModal({{$data->indicator_result_ID}},'{{$data->indicator_result_name}}',{{$data->plan}},{{$data->unit}});"><i class="mdi mdi-grease-pencil launch-modal"></i></button>
+                                                        <td class="col-sm-2"><button
+                                                                class="btn btn-gradient-success newFont"
+                                                                data-toggle="modal" data-target="#editindicator"
+                                                                onclick="addContentToModal({{$data->indicator_result_ID}},'{{$data->indicator_result_name}}',{{$data->plan}},{{$data->unit}});"><i
+                                                                    class="mdi mdi-grease-pencil launch-modal"></i></button>
 
                                                     </tr>
                                                     @endforeach
@@ -134,7 +141,8 @@
                         <!-- ------------------------------------------  แสดงตัวชี้วัด end-  --------------------------------------------->
 
                         <!-- ------------------------------------------  แก้ไขตัวชี้วัด ---------------------------------------------------->
-                        <div class="modal fade" id="editindicator" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal fade" id="editindicator" tabindex="-1" role="dialog" data-backdrop="static"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-xl" role="document">
                                 <div class="modal-content">
                                     <div class="modal-body">
@@ -147,7 +155,9 @@
                                                 <div class="form-group col-md-12">
                                                     <label class="newFont">หัวข้อ</label>
                                                     <input type="hidden" id="indicator_result_ID_edit" name="id">
-                                                    <input type="text" id="indicator_result_name_edit" class="form-control" placeholder="หัวข้อตัวขี้วัด" name="newresult" required>
+                                                    <input type="text" id="indicator_result_name_edit"
+                                                        class="form-control" placeholder="หัวข้อตัวขี้วัด"
+                                                        name="newresult" required>
                                                     <!-- @foreach ($ob as $data)
                                                     <input type="hidden" name="id" value="{{$data->indicator_result_ID}}">
                                                     @endforeach -->
@@ -156,7 +166,8 @@
                                             <div class="row">
                                                 <div class="form-group col-md-12">
                                                     <label class="newFont">แผนตัวชี้วัด</label>
-                                                    <input type="text" class="form-control" placeholder="แผนตัวชี้วัด" name="newplan" required id="plan_edit">
+                                                    <input type="text" class="form-control" placeholder="แผนตัวชี้วัด"
+                                                        name="newplan" required id="plan_edit">
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -168,7 +179,8 @@
                                                         <optgroup class="newFont">
                                                             <option value="">เลือกผู้รับผิดชอบ</option>
                                                             @foreach ($ob1 as $data1)
-                                                            <option value="{{$data1->id_unit}}">{{$data1->unit_name}}</option>
+                                                            <option value="{{$data1->id_unit}}">{{$data1->unit_name}}
+                                                            </option>
                                                             @endforeach
                                                         </optgroup>
                                                     </select>
@@ -189,7 +201,8 @@
                                                 <div class="form-group col-md-9"></div>
 
                                                 <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                                                    <button type="button" class="btn btn-secondary"
+                                                        data-dismiss="modal">
                                                         <h7 class="newFont">ยกเลิก</h7>
                                                     </button>
                                                     <input type="submit" value="บันทึก" class="btn btn-primary">
@@ -201,7 +214,8 @@
                             </div>
                         </div>
 
-                        <div class="modal fade" id="addindicator" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal fade" id="addindicator" tabindex="-1" role="dialog" data-backdrop="static"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-xl" role="document">
                                 <div class="modal-content">
                                     <div class="modal-body">
@@ -213,14 +227,16 @@
                                             <div class="row">
                                                 <div class="form-group col-md-12">
                                                     <label class="newFont">หัวข้อ</label>
-                                                    <input type="text" class="form-control" placeholder="หัวข้อตัวขี้วัด" name="resultname" required>
+                                                    <input type="text" class="form-control"
+                                                        placeholder="หัวข้อตัวขี้วัด" name="resultname" required>
 
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="form-group col-md-12">
                                                     <label class="newFont">แผน</label>
-                                                    <input type="text" class="form-control" placeholder="แผนตัวชี้วัด" name="plan">
+                                                    <input type="text" class="form-control" placeholder="แผนตัวชี้วัด"
+                                                        name="plan">
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -230,7 +246,8 @@
                                                         <optgroup class="newFont">
                                                             <option value="">เลือกผู้รับผิดชอบ</option>
                                                             @foreach ($ob1 as $data1)
-                                                            <option value="{{$data1->id_unit}}">{{$data1->unit_name}}</option>
+                                                            <option value="{{$data1->id_unit}}">{{$data1->unit_name}}
+                                                            </option>
                                                             @endforeach
                                                         </optgroup>
                                                     </select>
@@ -252,7 +269,8 @@
                                                 <div class="form-group col-md-9"></div>
 
                                                 <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                                                    <button type="button" class="btn btn-secondary"
+                                                        data-dismiss="modal">
                                                         <h7 class="newFont">ยกเลิก</h7>
                                                     </button>
                                                     <input type="submit" value="บันทึก" class="btn btn-primary">
@@ -267,7 +285,8 @@
                             </div>
                         </div>
 
-                        <div class="modal fade" id="deleteindicator" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal fade" id="deleteindicator" tabindex="-1" role="dialog" data-backdrop="static"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -280,7 +299,8 @@
                                         <p class="newFont">ต้องการลบตัวชี้วัดนี้หรือไม่</p>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary newFont" data-dismiss="modal">ยกเลิก</button>
+                                        <button type="button" class="btn btn-secondary newFont"
+                                            data-dismiss="modal">ยกเลิก</button>
                                         <button type="button" class="btn btn-primary newFont">ยืนยัน</button>
                                     </div>
                                 </div>
