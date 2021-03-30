@@ -36,6 +36,55 @@
     }
 </style>
 <!-- ------------------------------------------  Link Script Jquery-  --------------------------------------------->
+
+
+<body>
+    <!-- ------------------------------------------  include  --------------------------------------------->
+
+    <div class="container-scroller">
+        <!-- partial:partials/_navbar.html -->
+        @include('partials.navbar')
+        <!-- partial -->
+        <div class="container-fluid page-body-wrapper">
+            <!-- partial:partials/_sidebar.html -->
+            @include('partials.sidebar')
+            <!-- partial -->
+            <div class="main-panel">
+                <div class="content-wrapper">
+                    <div class="page-header">
+                        <h3 class="newFont"> กราฟตัวชี้วัด </h3>
+                    </div>
+                    <!-- chart-year -->
+                    <div class="row">
+                        <div class="col">
+                            <div id="chart-year">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- chart-quarter -->
+                    <!-- <div class="row">
+                        <div class="col">
+                            <div id="chart-quarter">
+                            </div>
+                        </div>
+                    </div> -->
+                    <!-- chart-month -->
+                    <div class="row">
+                        <div class="col">
+                            <div id="chart-month">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @include('partials.footer')
+            </div>
+
+        </div>
+    </div>
+    <!-- Div nav & side -->
+
+</body>
+
 <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 <!-- chart-year -->
 <script>
@@ -165,50 +214,3 @@
     var chartQuarter = new ApexCharts(document.querySelector("#chart-month"), optionsMonth);
     chartQuarter.render();
 </script>
-
-<body>
-    <!-- ------------------------------------------  include  --------------------------------------------->
-
-    <div class="container-scroller">
-        <!-- partial:partials/_navbar.html -->
-        @include('partials.navbar')
-        <!-- partial -->
-        <div class="container-fluid page-body-wrapper">
-            <!-- partial:partials/_sidebar.html -->
-            @include('partials.sidebar')
-            <!-- partial -->
-            <div class="main-panel">
-                <div class="content-wrapper">
-                    <div class="page-header">
-                        <h3 class="newFont"> กราฟตัวชี้วัด </h3>
-                    </div>
-                    <!-- chart-year -->
-                    <div class="row">
-                        <div class="col">
-                            <div id="chart-year">
-                            </div>
-                        </div>
-                    </div>
-                    <!-- chart-quarter -->
-                    <!-- <div class="row">
-                        <div class="col">
-                            <div id="chart-quarter">
-                            </div>
-                        </div>
-                    </div> -->
-                    <!-- chart-month -->
-                    <div class="row">
-                        <div class="col">
-                            <div id="chart-month">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                @include('partials.footer')
-            </div>
-
-        </div>
-    </div>
-    <!-- Div nav & side -->
-
-</body>
