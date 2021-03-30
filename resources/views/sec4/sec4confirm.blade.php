@@ -61,8 +61,28 @@ th {
                         <div class="col-12 grid-margin stretch-card">
                             <div class="card">
                                 <div class="card-body">
-                                    <h3 class="newFont"> ส่วนที่ 4 ผลการดำเนินงานตามตัวชี้วัดยุทธศาสตร์
-                                        (ที่หน่วยงานรับผิดชอบ) </h3>
+                                    <div class="col-12">
+                                        <div class="from-group row">
+                                            <h3 class="newFont"> ส่วนที่ 4 ผลการดำเนินงานตามตัวชี้วัดยุทธศาสตร์
+                                                (ที่หน่วยงานรับผิดชอบ) </h3>
+                                            <select class="col-md-2 from-control form-control-sm" id="">
+                                                <option>มกราคม</option>
+                                                <option>กุมภาพันธ์</option>
+                                                <option>มีนาคม</option>
+                                                <option>เมษายน</option>
+                                                <option>พฤษภาคม</option>
+                                                <option>มิถุนายน</option>
+                                                <option>กรกฎาคม</option>
+                                                <option>สิงหาคม</option>
+                                                <option>กันยายน</option>
+                                                <option>ตุลาคม</option>
+                                                <option>พฤศจิกายน</option>
+                                                <option>ธันวาคม</option>
+                                            </select>
+
+                                        </div>
+                                    </div>
+
                                     <br>
                                     <div class="row">
                                         <!-- <div class="col-md-1"></div> -->
@@ -70,31 +90,26 @@ th {
                                             <table class="table table-bordered newFont">
                                                 <thead>
                                                     <tr class="d-flex">
-                                                        <th class="col-sm-4" scope="col">
+                                                        <th class="col-sm-5" scope="col">
                                                             <h7 class="newFont">ตัวชี้วัดตามคำรับรอง</h7>
                                                         </th>
-                                                        <th class="col-sm-4" scope="col">
+                                                        <th class="col-sm-5" scope="col">
                                                             <h7 class="newFont">เป้าหมายตามคำรับรอง</h7>
                                                         </th>
                                                         <th class="col-sm-2" scope="col">
                                                             <h7 class="newFont">ผู้รับผิดชอบ</h7>
                                                         </th>
-                                                        <th class="col-sm-2" scope="col"></th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
                                                     @foreach ($ob as $data)
                                                     <tr class="d-flex">
-                                                        <td class="col-sm-1"> {{$data->indicator_stratetegic_id}} </td>
-                                                        <td class="col-sm-4 break textleft">
+                                                        <td class="col-sm-5 break textleft">
+                                                            {{$data->indicator_stratetegic_id}} </td>
+                                                        <td class="col-sm-5 break textleft">
                                                             {{$data->indicator_stratetegic_name}}
                                                         </td>
                                                         <td class="col-sm-2 textleft"> เล่ม/คน </td>
-                                                        <td class="col-sm-1"> 1 </td>
-                                                        <td class="col-sm-2 textleft"> อาภรณ์ </td>
-                                                        <td class="col-sm-2"><button
-                                                                class="btn btn-gradient-success newFont"
-                                                                data-toggle="modal">ยืนยัน</button>
 
                                                     </tr>
                                                     @endforeach
