@@ -59,12 +59,12 @@ class Sec3AddInd extends Controller
         }
 
         // insert สิทธ์ ซึ่งจะว่างไว้ก่อน
-        // $data3 = array();
-        // $data3["KR_idKR"] = $max;
-        // $data3["Employee_id_employee"] = 0;
-        // $data3["Employee_id_position"] = 0;
-        // $data3["Employee_id_department"] = 0;
-        // DB::table('autrority')->insert($data3);
+        $data3 = array();
+        $data3["KR_idKR"] = $max;
+        $data3["Employee_id_employee"] = 0;
+        $data3["Employee_id_position"] = 0;
+        $data3["Employee_id_department"] = 0;
+        DB::table('autrority')->insert($data3);
 
         return redirect()->back()->with('sucess', 'บันทึกข้อมูลเรียบร้อย');
     }

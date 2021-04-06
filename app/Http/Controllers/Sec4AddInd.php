@@ -11,8 +11,8 @@ class Sec4AddInd extends Controller
     public function index()
     {
         $ob = DB::table('indicator_stratetegic')
-        ->orderBy('indicator_stratetegic_id')
-        ->get();
+            ->orderBy('indicator_stratetegic_id')
+            ->get();
         return view('sec4.addind', compact('ob'));
     }
 
@@ -23,7 +23,7 @@ class Sec4AddInd extends Controller
         $data["indicator_stratetegic_name"] = $request->resultname;
         $data["goal"] = $request->resultgoal;
         $data["year_year_id"] = date("Y") + 543;
-        
+
         DB::table('indicator_stratetegic')->insert($data);
 
         // ค่า kr ตัวล่าสุด
@@ -34,6 +34,7 @@ class Sec4AddInd extends Controller
             $data2 = array();
             $data2["mount"] = $i;
             $data2["indicator_stratetegic_year_year_id"] = date("Y") + 543;
+            $data2["year_year_id"] = date("Y") + 543;
             $data2["indicator_stratetegic_indicator_stratetegic_id"] = $max;
             $data2["status"] = 0;
             DB::table('stratetegic')->insert($data2);
@@ -60,5 +61,4 @@ class Sec4AddInd extends Controller
             ]);
         return redirect()->back()->with('sucess', 'บันทึกข้อมูลเรียบร้อย');
     }
-    
 }
