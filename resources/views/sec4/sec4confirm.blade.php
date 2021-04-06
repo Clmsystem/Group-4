@@ -63,7 +63,8 @@ th {
                                 <div class="card-body">
                                     <div class="col-12">
                                         <div class="from-group row">
-                                            <h3 class="newFont"> ส่วนที่ 4 ผลการดำเนินงานตามตัวชี้วัดยุทธศาสตร์
+                                            <h3 class="col-md-10 newFont"> ส่วนที่ 4
+                                                ผลการดำเนินงานตามตัวชี้วัดยุทธศาสตร์
                                                 (ที่หน่วยงานรับผิดชอบ) </h3>
                                             <select class="col-md-2 from-control form-control-sm" id="">
                                                 <option>มกราคม</option>
@@ -109,7 +110,7 @@ th {
                                                         <td class="col-sm-5 break textleft">
                                                             {{$data->indicator_stratetegic_name}}
                                                         </td>
-                                                        <td class="col-sm-2 textleft"> เล่ม/คน </td>
+                                                        <td class="col-sm-2 textleft"> อาภรณ์ </td>
 
                                                     </tr>
                                                     @endforeach
