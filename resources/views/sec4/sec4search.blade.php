@@ -64,10 +64,10 @@
                         <div class="col-12 grid-margin stretch-card">
                             <div class="card">
                                 <div class="card-body">
-                                    <div class="container">
-                                        <h3 class="newFont"> ค้นหาผลการดำเนินงานย้อนหลัง ส่วนที่4 </h3>
+                                    <h3 class="newFont"> ค้นหาผลการดำเนินงานย้อนหลัง ส่วนที่4 </h3>
+                                    <br>
+                                    <div class="row">
                                         <label class="newFont">ค้นหา</label>
-                                        <div class="row">
                                             <div class="col-sm-3">
                                                 <select class="form-control">
                                                     <optgroup class="newFont">
