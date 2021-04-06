@@ -37,7 +37,13 @@
 <!-- ------------------------------------------  Link Script Jquery-  --------------------------------------------->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
+<script type="text/javascript">
+    function addContentToModal(id, name, goal) {
+        document.getElementById('indicator_stratetegic_id').value = id;
+        document.getElementById('indicator_stratetegic_name').value = name;
+        document.getElementById('goal').value = goal;
+    };
+</script>
 <body>
     <!-- ------------------------------------------  include  --------------------------------------------->
 
@@ -92,9 +98,8 @@
                                                 <tbody>
                                                     <tr class="d-flex">
                                                         <td class="col-sm-1"> {{$data->indicator_stratetegic_id}} </td>
-                                                        <td class="col-sm-4 break textleft"> {{$data->indicator_stratetegic_name}}
-                                                        </td>
-                                                        <td class="col-sm-3 textleft"> ร้อยละ 85 </td>
+                                                        <td class="col-sm-4 break textleft"> {{$data->indicator_stratetegic_name}}</td>
+                                                        <td class="col-sm-3 textleft">{{$data->goal}}</td>
                                                         <td class="col-sm-2 textleft"> ปรีชา </td>
                                                         <td class="col-sm-2"><button class="btn btn-gradient-success newFont" data-toggle="modal" data-target="#editindicator"><i class="mdi mdi-grease-pencil launch-modal"></i></button>
 
