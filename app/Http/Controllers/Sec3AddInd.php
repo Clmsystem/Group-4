@@ -10,7 +10,7 @@ class Sec3AddInd extends Controller
     public function index()
     {
         $ob = DB::table('indicator_result')
-        // ->join('unit', 'indicator_result.unit', 'unit.id_unit')
+            // ->join('unit', 'indicator_result.unit', 'unit.id_unit')
             ->join('unit', 'indicator_result.unit', '=', 'unit.id_unit')
             ->orderBy('indicator_result_id')
             ->get();

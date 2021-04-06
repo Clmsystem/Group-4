@@ -11,18 +11,35 @@ class Sec3SaveData extends Controller
 {
     public function index()
     {
+        $mount = (int)date('m');
         $ob = DB::table('result')
             ->join('indicator_result', 'result.indicator_result_indicator_result_ID', '=', 'indicator_result.indicator_result_ID')
-            ->where('result.mount', '=', (int)date('m'))
+            ->join('unit', 'indicator_result.unit', '=', 'unit.id_unit')
+            ->where('result.mount', '=', $mount)
             ->get();
-        return view('sec3.savedata', compact('ob'));
+        return view('sec3.savedata', compact('ob', 'mount'));
     }
     public function resultShowMount(Request $request)
     {
+        $mount = $request->mount;
         $ob = DB::table('result')
             ->join('indicator_result', 'result.indicator_result_indicator_result_ID', '=', 'indicator_result.indicator_result_ID')
-            ->where('result', '=', $request->mount)
+            ->join('unit', 'indicator_result.unit', '=', 'unit.id_unit')
+            ->where('result.mount', '=', $mount)
             ->get();
-        return view('sec3.savedata', compact('ob'));
+
+        return view('sec3.savedata', compact('ob', 'mount'));
+    }
+
+    public function updateData(Request $request)
+    {
+
+        DB::table('result')
+            ->where('result_ID', $request->id)
+            ->update([
+                'result' => $request->result,
+                'performance_result' => $request->performance,
+            ]);
+        return redirect()->back()->with('sucess', 'บันทึกข้อมูลเรียบร้อย');
     }
 }
