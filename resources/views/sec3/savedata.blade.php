@@ -46,7 +46,7 @@
     document.getElementById('performance_result_edit').value = performance;
   };
 </script>
-@include('partials.header')
+
 
 <body>
   <div class="container-scroller newFont">
@@ -67,7 +67,7 @@
             </div>
 
             <div class="form-group col-md-4">
-              <form action="{{route('resultshowmount')}}" method="POST" enctype="multipart/form-data">
+              <form action="{{route('resultshowmountsec3')}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <select id="client_id" type="dropdown-toggle" class="form-control" name="mount">
                   <optgroup>
@@ -155,11 +155,11 @@
                     <div class="modal-body">
                       <br>
                       <h2 class="modal-title newFont" id="exampleModalLabel">แก้ไขผลการปฏิบัติงาน</h2>
-                      <form class="forms-sample" action="{{route('updateData')}}" method="post">
+                      <form class="forms-sample" action="{{route('updateDataSec3')}}" method="post">
                         @csrf
                         <hr><br>
                         <div class="row">
-                          <input type="text" id="result_ID_edit" name="id">
+                          <input type="hidden" id="result_ID_edit" name="id">
                           <div class="form-group col-md-4">
                             <label class="newFont">ตัวชี้วัด</label>
                             <input type="text" class="form-control" placeholder="ตัวชี้วัด" id="result_name_edit" name="name">

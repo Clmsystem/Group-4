@@ -37,6 +37,15 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+  function ModalEditData(id, name, result, percent, job) {
+    document.getElementById('stratetegic_ID_edit').value = id;
+    document.getElementById('stratetegic_name_edit').value = name;
+    document.getElementById('result_edit').value = result;
+    document.getElementById('percent_edit').value = percent;
+    document.getElementById('job_edit').value = job;
+  };
+</script>
 
 <body>
   <div class="container-scroller newFont">
@@ -54,6 +63,28 @@
               <div class="page-header">
                 <h3 class="newFont">ผลการดำเนินงานตามตัวชี้วัดยุทธศาสตร์</h3>
               </div>
+            </div>
+
+            <div class="form-group col-md-4">
+              <form action="{{route('resultshowmountsec4')}}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <select id="client_id" type="dropdown-toggle" class="form-control" name="mount">
+                  <optgroup>
+                    <option value="1" {{ $mount == 1 ? 'selected' : '' }}>มกราคม</option>
+                    <option value="2" {{ $mount == 2 ? 'selected' : '' }}>กุมภาพันธ์</option>
+                    <option value="3" {{ $mount == 3 ? 'selected' : '' }}>มีนาคม</option>
+                    <option value="4" {{ $mount == 4 ? 'selected' : '' }}>เมษายน</option>
+                    <option value="5" {{ $mount == 5 ? 'selected' : '' }}>พฤษภาคม</option>
+                    <option value="6" {{ $mount == 6 ? 'selected' : '' }}>มิถุนายน</option>
+                    <option value="7" {{ $mount == 7 ? 'selected' : '' }}>กรกฎาคม</option>
+                    <option value="8" {{ $mount == 8 ? 'selected' : '' }}>สิงหาคม</option>
+                    <option value="9" {{ $mount == 9 ? 'selected' : '' }}>กันยายน</option>
+                    <option value="10" {{ $mount == 10 ? 'selected' : '' }}>ตุลาคม</option>
+                    <option value="11" {{ $mount == 11 ? 'selected' : '' }}>พฤศจิกายน</option>
+                    <option value="12" {{ $mount == 12 ? 'selected' : '' }}>ธันวาคม</option>
+                  </optgroup>
+                </select>
+              </form>
             </div>
 
             <div class="col-md-12 grid-margin stretch-card">
@@ -86,11 +117,11 @@
                       <tbody>
                         <tr class="d-flex">
                           <td class="col-sm-3 break textleft">{{$data->indicator_stratetegic_name}} </td>
-                          <td class="col-sm-2 textleft"> ร้อยละ 85 </td>
-                          <td class="col-sm-1"> </td>
-                          <td class="col-sm-1"> </td>
-                          <td class="col-sm-3"> </td>
-                          <td class="col-sm-2"><button class="btn btn-gradient-success newFont" data-toggle="modal" data-target="#editindicator"><i class="mdi mdi-grease-pencil launch-modal"></i></button>
+                          <td class="col-sm-2 textleft">{{$data->goal}}</td>
+                          <td class="col-sm-1">{{$data->result}}</td>
+                          <td class="col-sm-1">{{$data->percent}}</td>
+                          <td class="col-sm-3">{{$data->job}}</td>
+                          <td class="col-sm-2"><button class="btn btn-gradient-success newFont" data-toggle="modal" data-target="#editindicator" onclick="ModalEditData({{$data->stratetegic_ID}},'{{$data->indicator_stratetegic_name}}','{{$data->result}}','{{$data->percent}}','{{$data->job}}');"><i class="mdi mdi-grease-pencil launch-modal"></i></button>
                           </td>
                         </tr>
                       </tbody>
@@ -114,36 +145,36 @@
                     <div class="modal-body">
                       <br>
                       <h2 class="modal-title newFont" id="exampleModalLabel">แก้ไขผลการดำเนินงานตามตัวชี้วัดยุทธศาสตร์</h2>
-                      <form class="forms-sample">
+                      <form class="forms-sample" action="{{route('updateDataSec4')}}" method="post">
+                        @csrf
                         <hr><br>
                         <div class="row">
+                          <input type="hidden" id="stratetegic_ID_edit" name="id">
                           <div class="form-group col-md-4">
                             <label class="newFont">ตัวชี้วัดตามคำรับรอง</label>
-                            <input type="text" class="form-control" placeholder="ตัวชี้วัดตามคำรับรอง" value="" required>
+                            <input type="text" class="form-control" placeholder="ตัวชี้วัดตามคำรับรอง" value="" id="stratetegic_name_edit" name="name" required>
                           </div>
 
                           <div class="form-group col-md-2">
                             <label class="newFont">ผล</label>
-                            <input type="text" class="form-control" placeholder="ผล">
+                            <input type="text" class="form-control" placeholder="ผล" id="result_edit" name="result">
                           </div>
                           <div class="form-group col-md-2">
                             <label class="newFont">ร้อยละผลสำเร็จ</label>
-                            <input type="text" class="form-control" placeholder="ร้อยละผลสำเร็จ" required>
+                            <input type="text" class="form-control" placeholder="ร้อยละผลสำเร็จ" id="percent_edit" name="percent" required>
                           </div>
                           <div class="form-group col-md-4">
                             <label class="newFont">งานที่สำเร็จแล้ว/งานที่จะดำเนินการในอนาคต</label>
-                            <input type="text" class="form-control" placeholder="งานที่สำเร็จแล้ว/งานที่จะดำเนินการในอนาคต" required>
+                            <input type="text" class="form-control" placeholder="งานที่สำเร็จแล้ว/งานที่จะดำเนินการในอนาคต" id="job_edit" name="job" required>
                           </div>
                         </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                            <h7 class="newFont">ยกเลิก</ย>
+                          </button>
+                          <input type="submit" value="บันทึก" class="btn btn-primary">
+                        </div>
                       </form>
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">
-                        <h7 class="newFont">ยกเลิก</h7>
-                      </button>
-                      <button type="button" class="btn btn-primary">
-                        <h7 class="newFont">บันทึก</h7>
-                      </button>
                     </div>
                   </div>
                 </div>
@@ -156,3 +187,9 @@
     </div>
 
 </body>
+<script type="text/javascript">
+  var select = document.getElementById('client_id');
+  select.addEventListener('change', function() {
+    this.form.submit();
+  }, false);
+</script>
