@@ -11,7 +11,26 @@ class Sec3Search extends Controller
 {
     public function index()
     {
-        $ob = DB::table('indicator_result')->get();
-        return view('sec3.sec3search', compact('ob'));
+        $mount = (int)date('m');
+        $year = (int)date('Y')+543;
+
+        $ob = DB::table('result')
+            ->join('indicator_result', 'result.indicator_result_indicator_result_ID', '=', 'indicator_result.indicator_result_ID')
+            ->join('unit', 'indicator_result.unit', '=', 'unit.id_unit')
+            ->where('result.mount', '=', $mount)
+            ->get();
+        return view('sec3.sec3search', compact('ob', 'mount'));
     }
+    public function resultShowMount(Request $request)
+    {
+        $mount = $request->mount;
+        $ob = DB::table('result')
+            ->join('indicator_result', 'result.indicator_result_indicator_result_ID', '=', 'indicator_result.indicator_result_ID')
+            ->join('unit', 'indicator_result.unit', '=', 'unit.id_unit')
+            ->where('result.mount', '=', $mount)
+            ->get();
+
+        return view('sec3.sec3search', compact('ob', 'mount'));
+    }
+
 }
