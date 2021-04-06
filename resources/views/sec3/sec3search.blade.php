@@ -38,6 +38,9 @@
 <!-- ------------------------------------------  Link Script Jquery-  --------------------------------------------->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
+
 
 <body>
     <!-- ------------------------------------------  include  --------------------------------------------->
@@ -172,32 +175,29 @@
                                 <div class="modal-content">
                                     <div class="modal-body">
                                         <br>
-                                        <h2 class="modal-title newFont" id="exampleModalLabel">ข้อมูลตัวชี้วัด</h2>
-                                        <form class="forms-sample">
-                                            <hr><br>
-                                            <div class="row">
-                                                <div class="form-group col-md-8">
-                                                    <label class="newFont">ตัวชี้วัด</label>
-                                                    <input type="text" class="form-control" placeholder="ตัวชี้วัด" value="" required>
+                                        <h2 class="modal-title newFont" id="exampleModalLabel">กราฟแสดงข้อมูลย้อนหลัง</h2>
+                                        <div class="container-scroller">
+
+                                            <div class="container-fluid page-body-wrapper">
+
+                                                <div class="main-panel">
+                                                    <div class="content-wrapper ">
+
+
+                                                        <!-- chart-month -->
+                                                        <div class="row">
+                                                            <div class="col">
+                                                                <div id="chart-month">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    @include('partials.footer')
                                                 </div>
-                                                <div class="form-group col-md-2">
-                                                    <label class="newFont">ผู้รับผิดชอบ</label>
-                                                    <select class="form-control">
-                                                        <optgroup class="newFont">
-                                                            <option>เลือกผู้รับผิดชอบ</option>
-                                                            <option>ทีมดูแลเพจ</option>
-                                                            <option>เกษมาพร</option>
-                                                            <option>ปรีชา</option>
-                                                            <option>อาภรณ์</option>
-                                                        </optgroup>
-                                                    </select>
-                                                </div>
-                                                <div class="form-group col-md-2">
-                                                    <label class="newFont">หน่วยนับ</label>
-                                                    <input type="text" class="form-control" placeholder="หน่วยนับ" required>
-                                                </div>
+
                                             </div>
-                                        </form>
+
+                                        </div>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">
@@ -242,3 +242,43 @@
     <!-- Div nav & side -->
     </div>
 </body>
+<!-- chart-month -->
+<script>
+    var optionsMonth = {
+        series: [{
+            name: 'Value',
+            data: [44, 55, 57, 56, 61, 58, 63, 60, 66, 47, 58, 62]
+        }, ],
+        chart: {
+            type: 'bar',
+            Width: 100,
+            height: 475
+
+        },
+        plotOptions: {
+            bar: {
+                horizontal: false,
+                columnWidth: '55%',
+                endingShape: 'rounded',
+                barHeight: '100%'
+            },
+        },
+        dataLabels: {
+            enabled: false
+
+        },
+        stroke: {
+            show: true,
+            width: 5,
+            colors: ['transparent']
+        },
+        xaxis: {
+            categories: ['Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
+        },
+        fill: {
+            opacity: 1
+        },
+    };
+    var chartQuarter = new ApexCharts(document.querySelector("#chart-month"), optionsMonth);
+    chartQuarter.render();
+</script>
