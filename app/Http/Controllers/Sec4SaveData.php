@@ -37,8 +37,9 @@ class Sec4SaveData extends Controller
         DB::table('stratetegic')
             ->where('stratetegic_ID', $request->id)
             ->update([
-                'stratetegic' => $request->result,
-                'performance_stratetegic' => $request->performance,
+                'result' => $request->result,
+                'percent' => $request->percent,
+                'job' => $request->job,
             ]);
         return redirect()->back()->with('sucess', 'บันทึกข้อมูลเรียบร้อย');
     }

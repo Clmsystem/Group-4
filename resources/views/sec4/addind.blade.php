@@ -44,6 +44,7 @@
         document.getElementById('goal').value = goal;
     };
 </script>
+
 <body>
     <!-- ------------------------------------------  include  --------------------------------------------->
 
@@ -185,7 +186,7 @@
                                             <div class="row">
                                                 <div class="form-group col-md-12">
                                                     <label class="newFont">เป้าหมายตามคำรับรอง</label>
-                                                    <input type="text" class="form-control" placeholder="แผนตัวชี้วัด" required>
+                                                    <input type="text" class="form-control" placeholder="แผนตัวชี้วัด" name="resultgoal" required>
                                                 </div>
                                             </div>
                                             <div class="row">
