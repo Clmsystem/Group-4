@@ -81,6 +81,7 @@ Route::post('/sec4/add', [Sec4AddInd::class, 'addInd'])->name('sec4addInd');
 Route::post('/sec3/update', [Sec3AddInd::class, 'updateInd'])->name('sec3updateInd');
 Route::post('/sec3/updatedata', [Sec3SaveData::class, 'updateData'])->name('updateDataSec3');
 Route::post('/sec4/updatedata', [Sec4SaveData::class, 'updateData'])->name('updateDataSec4');
+Route::post('/searchresultmountsec3', [Sec3Search::class, 'resultShowMount'])->name('resultsearchmountsec3');
 Route::post('/showresultmountsec3', [Sec3SaveData::class, 'resultShowMount'])->name('resultshowmountsec3');
 Route::post('/showresultmountsec4', [Sec4SaveData::class, 'resultShowMount'])->name('resultshowmountsec4');
 Route::get('/sec4dashboard', function () {

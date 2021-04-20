@@ -12,18 +12,23 @@ class Sec3SaveData extends Controller
     public function index()
     {
         $mount = (int)date('m');
-        $ob = DB::table('result')
-            ->join('indicator_result', 'result.indicator_result_indicator_result_ID', '=', 'indicator_result.indicator_result_ID')
+        $ob = DB::table('employee')
+            ->join('access_result', 'employee.id_employee', '=', 'access_result.Employee_id_employee')
+            ->join('indicator_result', 'access_result.indicator_result_indicator_result_ID', '=', 'indicator_result.indicator_result_ID')
+            ->join('result', 'indicator_result.indicator_result_ID', '=', 'result.indicator_result_indicator_result_ID')
             ->join('unit', 'indicator_result.unit', '=', 'unit.id_unit')
             ->where('result.mount', '=', $mount)
             ->get();
+        // dd($ob);
         return view('sec3.savedata', compact('ob', 'mount'));
     }
     public function resultShowMount(Request $request)
     {
         $mount = $request->mount;
-        $ob = DB::table('result')
-            ->join('indicator_result', 'result.indicator_result_indicator_result_ID', '=', 'indicator_result.indicator_result_ID')
+        $ob = DB::table('employee')
+            ->join('access_result', 'employee.id_employee', '=', 'access_result.Employee_id_employee')
+            ->join('indicator_result', 'access_result.indicator_result_indicator_result_ID', '=', 'indicator_result.indicator_result_ID')
+            ->join('result', 'indicator_result.indicator_result_ID', '=', 'result.indicator_result_indicator_result_ID')
             ->join('unit', 'indicator_result.unit', '=', 'unit.id_unit')
             ->where('result.mount', '=', $mount)
             ->get();

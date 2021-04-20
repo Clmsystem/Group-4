@@ -9,13 +9,17 @@ class Sec3AddInd extends Controller
 {
     public function index()
     {
-        $ob = DB::table('indicator_result')
-            // ->join('unit', 'indicator_result.unit', 'unit.id_unit')
+
+        $ob = DB::table('employee')
+            ->join('access_result', 'employee.id_employee', '=', 'access_result.Employee_id_employee')
+            ->join('indicator_result', 'access_result.indicator_result_indicator_result_ID', '=', 'indicator_result.indicator_result_ID')
+            // ->leftJoin('result', 'indicator_result.indicator_result_ID', '=', 'result.indicator_result_indicator_result_ID')
             ->join('unit', 'indicator_result.unit', '=', 'unit.id_unit')
-            ->orderBy('indicator_result_id')
+            // ->select('indicator_result_ID', 'indicator_result_name', 'plan', 'unit', 'unit_name', 'name_employee')
             ->get();
         $ob1 = DB::table('unit')->get();
-        return view('sec3.addind', compact('ob', 'ob1'));
+        $ob2 = DB::table('employee')->get();
+        return view('sec3.addind', compact('ob', 'ob1', 'ob2'));
     }
     // public function addObject(Request $request)
     // {
@@ -48,6 +52,16 @@ class Sec3AddInd extends Controller
         // ค่า kr ตัวล่าสุด
         $max = DB::table('indicator_result')->max('indicator_result_ID');
 
+        $access = array();
+        // $data["assign_id"] = ;
+        $access["indicator_result_indicator_result_ID"] = $max;
+        $access["Employee_id_employee"] = $request->employee;
+        $access["user_employee_all_idemployee_all"] = 0;
+        $access["Employee_id_position"] = 0;
+        $access["Employee_id_department"] = 0;
+        $access["indicator_result_year_year_id"] = date("Y") + 543;
+        DB::table('access_result')->insert($access);
+
         // insert kr detail 12 เดือน
         for ($i = 1; $i <= 12; $i++) {
             $data2 = array();
@@ -59,12 +73,12 @@ class Sec3AddInd extends Controller
         }
 
         // insert สิทธ์ ซึ่งจะว่างไว้ก่อน
-        $data3 = array();
-        $data3["KR_idKR"] = $max;
-        $data3["Employee_id_employee"] = 0;
-        $data3["Employee_id_position"] = 0;
-        $data3["Employee_id_department"] = 0;
-        DB::table('autrority')->insert($data3);
+        // $data3 = array();
+        // $data3["KR_idKR"] = $max;
+        // $data3["Employee_id_employee"] = 0;
+        // $data3["Employee_id_position"] = 0;
+        // $data3["Employee_id_department"] = 0;
+        // DB::table('autrority')->insert($data3);
 
         return redirect()->back()->with('sucess', 'บันทึกข้อมูลเรียบร้อย');
     }

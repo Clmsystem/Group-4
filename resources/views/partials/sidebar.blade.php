@@ -36,8 +36,39 @@
       </div>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="pages/icons/mdi.html">
-        <span class="menu-title">Member</span>
+      <a class="nav-link" href="/sec3addind">
+        <span class="menu-title">sec3addind</span>
+        <i class="mdi mdi-contacts menu-icon"></i>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/sec3savedata">
+        <span class="menu-title">sec3savedata</span>
+        <i class="mdi mdi-contacts menu-icon"></i>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/sec3search">
+        <span class="menu-title">sec3search</span>
+        <i class="mdi mdi-contacts menu-icon"></i>
+      </a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="/sec4addind">
+        <span class="menu-title">sec4addind</span>
+        <i class="mdi mdi-contacts menu-icon"></i>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/sec4savedata">
+        <span class="menu-title">sec4savedata</span>
+        <i class="mdi mdi-contacts menu-icon"></i>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/sec4search">
+        <span class="menu-title">sec4search</span>
         <i class="mdi mdi-contacts menu-icon"></i>
       </a>
     </li>

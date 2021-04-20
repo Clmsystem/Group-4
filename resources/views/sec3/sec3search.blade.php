@@ -67,181 +67,213 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h3 class="newFont"> ค้นหาผลการดำเนินงานย้อนหลัง ส่วนที่3 </h3>
-                                    <br> 
+                                    <br>
                                     <div class="row">
                                         <label class="newFont">ค้นหา</label>
-                                            <div class="col-sm-3">
-                                                <select class="form-control">
-                                                    <optgroup class="newFont">
-                                                        <option>ปี</option>
-                                                        <option>2563</option>
-                                                        <option>2564</option>
+                                        <div class="col-sm-3">
+                                            <select class="form-control">
+                                                <optgroup class="newFont">
+                                                    <option>ปี</option>
+                                                    <option>2563</option>
+                                                    <option>2564</option>
+                                                </optgroup>
+                                            </select>
+                                        </div>
+
+                                        <div class="form-group col-md-4">
+                                            <form action="{{route('resultsearchmountsec3')}}" method="POST" enctype="multipart/form-data">
+                                                @csrf
+                                                <select id="client_id" type="dropdown-toggle" class="form-control" name="mount">
+                                                    <optgroup>
+                                                        <option value="1" {{ $mount == 1 ? 'selected' : '' }}>มกราคม</option>
+                                                        <option value="2" {{ $mount == 2 ? 'selected' : '' }}>กุมภาพันธ์</option>
+                                                        <option value="3" {{ $mount == 3 ? 'selected' : '' }}>มีนาคม</option>
+                                                        <option value="4" {{ $mount == 4 ? 'selected' : '' }}>เมษายน</option>
+                                                        <option value="5" {{ $mount == 5 ? 'selected' : '' }}>พฤษภาคม</option>
+                                                        <option value="6" {{ $mount == 6 ? 'selected' : '' }}>มิถุนายน</option>
+                                                        <option value="7" {{ $mount == 7 ? 'selected' : '' }}>กรกฎาคม</option>
+                                                        <option value="8" {{ $mount == 8 ? 'selected' : '' }}>สิงหาคม</option>
+                                                        <option value="9" {{ $mount == 9 ? 'selected' : '' }}>กันยายน</option>
+                                                        <option value="10" {{ $mount == 10 ? 'selected' : '' }}>ตุลาคม</option>
+                                                        <option value="11" {{ $mount == 11 ? 'selected' : '' }}>พฤศจิกายน</option>
+                                                        <option value="12" {{ $mount == 12 ? 'selected' : '' }}>ธันวาคม</option>
                                                     </optgroup>
                                                 </select>
-                                            </div>
-                                            <div class="col-sm-3">
-                                                <select class="form-control">
-                                                    <optgroup class="newFont">
-                                                        <option>เดือน</option>
-                                                        <option>มกราคม</option>
-                                                        <option>กุมภาพันธ์</option>
-                                                        <option>มีนาคม</option>
-                                                        <option>เมษายน</option>
-                                                        <option>พฤษภาคม</option>
-                                                        <option>มิถุนายน</option>
-                                                        <option>กรกฎาคม</option>
-                                                        <option>สิงหาคม</option>
-                                                        <option>กันยายน</option>
-                                                        <option>ตุลาคม </option>
-                                                        <option>พฤศจิกายน</option>
-                                                        <option>ธันวาคม</option>
-                                                    </optgroup>
-                                                </select>
-                                            </div>
-                                            <div class="col-sm-3">
-                                                <button class="btn btn-gradient-primary newFont" data-toggle="modal" data-target=""><i class="mdi mdi-account-search-outline"></i></button>
-                                            </div>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- ข้อมูลตัวชี้วัด -->
-                        <div class="col-12 grid-margin stretch-card">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="container">
-                                        <h3 class="newFont"> ข้อมูลผลการดำเนินงานย้อนหลัง ส่วนที่3 </h3>
-                                    </div>
-                                    <div class="button-position">
-                                        <button class="btn btn-gradient-warning newFont" data-toggle="modal" data-target="#downloadindicator"><i class="mdi mdi-cloud-download"></i>
-                                        </button>
-                                    </div>
-                                    <br>
-                                    <br>
-                                    <div class="row">
-                                        <!-- <div class="col-md-1"></div> -->
-                                        <div class="col-md-12">
-                                            <table class="table table-bordered newFont">
-                                                <thead>
-                                                    <tr class="d-flex">
-                                                        <th class="col-sm-1" scope="col">
-                                                            <h7 class="newFont">ลำดับ</h7>
-                                                        </th>
-                                                        <th class="col-sm-4" scope="col">
-                                                            <h7 class="newFont">ตัวชี้วัด</h7>
-                                                        </th>
-                                                        <th class="col-sm-2" scope="col">
-                                                            <h7 class="newFont">แผนตัวชี้วัด</h7>
-                                                        </th>
-                                                        <th class="col-sm-1" scope="col">
-                                                            <h7 class="newFont">หน่วยนับ</h7>
-                                                        </th>
-                                                        <th class="col-sm-2" scope="col">
-                                                            <h7 class="newFont">ผู้รับผิดชอบ</h7>
-                                                        </th>
-
-                                                    </tr>
-                                                </thead>
-                                                @foreach ($ob as $data)
-                                                <tbody>
-                                                    <tr class="d-flex">
-                                                        <td class="col-sm-1"> {{$data->indicator_result_ID}} </td>
-                                                        <td class="col-sm-4 break textleft"> {{$data->indicator_result_name}} </td>
-                                                        <td class="col-sm-2 break textleft"> แผนตัวชี้วัด </td>
-                                                        <td class="col-sm-1 textleft"> เล่ม/คน </td>
-                                                        <td class="col-sm-2 textleft"> อาภรณ์ </td>
-                                                        <td class="col-sm-2">
-                                                            <button class="btn btn-gradient-info newFont" data-toggle="modal" data-target="#infoindicator"><i class="mdi mdi-chart-areaspline"></i></button>
-                                                        </td>
-                                                    </tr>
-
-                                                </tbody>
-                                                @endforeach
-                                            </table>
-                                            <!-- <div class="col-md-1"></div> -->
+                                        <div class="col-sm-3">
+                                            <input type="submit" value="ค้นหา" class="btn btn-gradient-primary newFont">
                                         </div>
+                                        </form>
+                                        <!-- <div class="col-sm-3">
+                                            <select class="form-control">
+                                                <optgroup class="newFont">
+                                                    <option>เดือน</option>
+                                                    <option>มกราคม</option>
+                                                    <option>กุมภาพันธ์</option>
+                                                    <option>มีนาคม</option>
+                                                    <option>เมษายน</option>
+                                                    <option>พฤษภาคม</option>
+                                                    <option>มิถุนายน</option>
+                                                    <option>กรกฎาคม</option>
+                                                    <option>สิงหาคม</option>
+                                                    <option>กันยายน</option>
+                                                    <option>ตุลาคม </option>
+                                                    <option>พฤศจิกายน</option>
+                                                    <option>ธันวาคม</option>
+                                                </optgroup>
+                                            </select>
+                                        </div> -->
+                                        <!-- <div class="col-sm-3">
+                                            <button class="btn btn-gradient-primary newFont" data-toggle="modal" data-target=""><i class="mdi mdi-account-search-outline"></i></button>
+                                        </div> -->
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-                        <!-- ------------------------------------------  แสดงตัวชี้วัด end-  --------------------------------------------->
-
-                        <!-- ------------------------------------------  แสดงข้อมูลตัวชี้วัด ---------------------------------------------------->
-                        <div class="modal fade" id="infoindicator" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-xl" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-body">
-                                        <br>
-                                        <h2 class="modal-title newFont" id="exampleModalLabel">กราฟแสดงข้อมูลย้อนหลัง</h2>
-                                        <div class="container-scroller">
-
-                                            <div class="container-fluid page-body-wrapper">
-
-                                                <div class="main-panel">
-                                                    <div class="content-wrapper ">
-
-
-                                                        <!-- chart-month -->
-                                                        <div class="row">
-                                                            <div class="col">
-                                                                <div id="chart-month">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    @include('partials.footer')
-                                                </div>
-
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">
-                                            <h7 class="newFont">ยกเลิก</ย>
-                                        </button>
-                                        <button type="button" class="btn btn-primary">
-                                            <h7 class="newFont">บันทึก</h7>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- ดาวน์โหลดตัวชี้วัด -->
-                        <div class="modal fade" id="downloadindicator" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h2 class="modal-title newFont">ดาวน์โหลดตัวชี้วัด</h2>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <p class="newFont">ต้องการดาวน์โหลดตัวชี้วัดนี้หรือไม่</p>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary newFont" data-dismiss="modal">ยกเลิก</button>
-                                        <button type="button" class="btn btn-primary newFont">ยืนยัน</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
                     </div>
-                    @include('partials.footer')
+
+                    <!-- ข้อมูลตัวชี้วัด -->
+                    <div class="col-12 grid-margin stretch-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h3 class="newFont"> ข้อมูลผลการดำเนินงานย้อนหลัง ส่วนที่3 </h3>
+                                <div class="button-position">
+                                    <button class="btn btn-gradient-warning newFont" data-toggle="modal" data-target="#downloadindicator"><i class="mdi mdi-cloud-download"></i>
+                                    </button>
+                                </div>
+                                <br>
+                                <br>
+                                <div class="row">
+                                    <!-- <div class="col-md-1"></div> -->
+                                    <div class="col-md-12">
+                                        <table class="table table-bordered newFont">
+                                            <thead>
+                                                <tr class="d-flex">
+                                                    <th class="col-sm-1" scope="col">
+                                                        <h7 class="newFont">ลำดับ</h7>
+                                                    </th>
+                                                    <th class="col-sm-4" scope="col">
+                                                        <h7 class="newFont">ตัวชี้วัด</h7>
+                                                    </th>
+                                                    <th class="col-sm-2" scope="col">
+                                                        <h7 class="newFont">แผนตัวชี้วัด</h7>
+                                                    </th>
+                                                    <th class="col-sm-1" scope="col">
+                                                        <h7 class="newFont">หน่วยนับ</h7>
+                                                    </th>
+                                                    <th class="col-sm-2" scope="col">
+                                                        <h7 class="newFont">ผู้รับผิดชอบ</h7>
+                                                    </th>
+
+                                                </tr>
+                                            </thead>
+                                            @foreach ($ob as $data)
+                                            <tbody>
+                                                <tr class="d-flex">
+                                                    <td class="col-sm-1"> {{$data->indicator_result_ID}} </td>
+                                                    <td class="col-sm-4 break textleft"> {{$data->indicator_result_name}} </td>
+                                                    <td class="col-sm-2 break textleft"> {{$data->plan}} </td>
+                                                    <td class="col-sm-1 textleft"> {{$data->unit_name}} </td>
+                                                    <td class="col-sm-2 textleft"> </td>
+                                                    <td class="col-sm-2">
+                                                        <button class="btn btn-gradient-info newFont" data-toggle="modal" data-target="#infoindicator"><i class="mdi mdi-chart-areaspline"></i></button>
+                                                    </td>
+                                                </tr>
+
+                                            </tbody>
+                                            @endforeach
+                                        </table>
+                                        <!-- <div class="col-md-1"></div> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ------------------------------------------  แสดงตัวชี้วัด end-  --------------------------------------------->
+
+            <!-- ------------------------------------------  แสดงข้อมูลตัวชี้วัด ---------------------------------------------------->
+            <div class="modal fade" id="infoindicator" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-xl" role="document">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <br>
+                            <h2 class="modal-title newFont" id="exampleModalLabel">กราฟแสดงข้อมูลย้อนหลัง</h2>
+                            <div class="container-scroller">
+
+                                <div class="container-fluid page-body-wrapper">
+
+                                    <div class="main-panel">
+                                        <div class="content-wrapper ">
+
+
+                                            <!-- chart-month -->
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div id="chart-month">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        @include('partials.footer')
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                                <h7 class="newFont">ยกเลิก</ย>
+                            </button>
+                            <button type="button" class="btn btn-primary">
+                                <h7 class="newFont">บันทึก</h7>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ดาวน์โหลดตัวชี้วัด -->
+            <div class="modal fade" id="downloadindicator" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2 class="modal-title newFont">ดาวน์โหลดตัวชี้วัด</h2>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p class="newFont">ต้องการดาวน์โหลดตัวชี้วัดนี้หรือไม่</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary newFont" data-dismiss="modal">ยกเลิก</button>
+                            <button type="button" class="btn btn-primary newFont">ยืนยัน</button>
+                        </div>
+                    </div>
                 </div>
             </div>
 
         </div>
+        @include('partials.footer')
+    </div>
+    </div>
+
+    </div>
     </div>
     <!-- Div nav & side -->
     </div>
 </body>
+</script>
+<!-- <script type="text/javascript">
+    var select = document.getElementById('client_id');
+    select.addEventListener('change', function() {
+        this.form.submit();
+    }, false);
+</script> -->
 <!-- chart-month -->
 <script>
     var optionsMonth = {
@@ -281,4 +313,3 @@
     };
     var chartQuarter = new ApexCharts(document.querySelector("#chart-month"), optionsMonth);
     chartQuarter.render();
-</script>
