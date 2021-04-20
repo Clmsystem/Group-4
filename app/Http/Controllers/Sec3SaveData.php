@@ -45,6 +45,7 @@ class Sec3SaveData extends Controller
                 'result' => $request->result,
                 'performance_result' => $request->performance,
             ]);
+
         return redirect()->back()->with('sucess', 'บันทึกข้อมูลเรียบร้อย');
     }
 }

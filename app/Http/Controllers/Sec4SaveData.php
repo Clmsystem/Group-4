@@ -12,9 +12,10 @@ class Sec4SaveData extends Controller
     public function index()
     {
         $mount = (int)date('m');
-        $ob = DB::table('stratetegic')
-            ->join('indicator_stratetegic', 'stratetegic.indicator_stratetegic_indicator_stratetegic_id', '=', 'indicator_stratetegic.indicator_stratetegic_id')
-
+        $ob = DB::table('employee')
+            ->join('access_stratetegic', 'employee.id_employee', '=', 'access_stratetegic.Employee_id_employee')
+            ->join('indicator_stratetegic', 'access_stratetegic.indicator_stratetegic_indicator_stratetegic_id', '=', 'indicator_stratetegic.indicator_stratetegic_ID')
+            ->join('stratetegic', 'indicator_stratetegic.indicator_stratetegic_ID', '=', 'stratetegic.indicator_stratetegic_indicator_stratetegic_id')
             ->where('stratetegic.mount', '=', $mount)
             ->get();
         return view('sec4.savedata', compact('ob', 'mount'));
@@ -22,11 +23,12 @@ class Sec4SaveData extends Controller
     public function resultShowMount(Request $request)
     {
         $mount = $request->mount;
-        $ob = DB::table('stratetegic')
-            ->join('indicator_stratetegic', 'stratetegic.indicator_stratetegic_indicator_stratetegic_id', '=', 'indicator_stratetegic.indicator_stratetegic_id')
+        $ob = DB::table('employee')
+            ->join('access_stratetegic', 'employee.id_employee', '=', 'access_stratetegic.Employee_id_employee')
+            ->join('indicator_stratetegic', 'access_stratetegic.indicator_stratetegic_indicator_stratetegic_id', '=', 'indicator_stratetegic.indicator_stratetegic_ID')
+            ->join('stratetegic', 'indicator_stratetegic.indicator_stratetegic_ID', '=', 'stratetegic.indicator_stratetegic_indicator_stratetegic_id')
             ->where('stratetegic.mount', '=', $mount)
             ->get();
-
         return view('sec4.savedata', compact('ob', 'mount'));
     }
 

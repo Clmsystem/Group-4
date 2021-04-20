@@ -38,10 +38,11 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script type="text/javascript">
-    function addContentToModal(id, name, goal) {
-        document.getElementById('indicator_stratetegic_id').value = id;
-        document.getElementById('indicator_stratetegic_name').value = name;
-        document.getElementById('goal').value = goal;
+    function addContentToModal(id, name, goal, employee) {
+        document.getElementById('indicator_stratetegic_ID_edit').value = id;
+        document.getElementById('indicator_stratetegic_name_edit').value = name;
+        document.getElementById('goal_edit').value = goal;
+        document.getElementById('employee_edit').value = employee;
     };
 </script>
 
@@ -101,8 +102,8 @@
                                                         <td class="col-sm-1"> {{$data->indicator_stratetegic_id}} </td>
                                                         <td class="col-sm-4 break textleft"> {{$data->indicator_stratetegic_name}}</td>
                                                         <td class="col-sm-3 textleft">{{$data->goal}}</td>
-                                                        <td class="col-sm-2 textleft"> ปรีชา </td>
-                                                        <td class="col-sm-2"><button class="btn btn-gradient-success newFont" data-toggle="modal" data-target="#editindicator"><i class="mdi mdi-grease-pencil launch-modal"></i></button>
+                                                        <td class="col-sm-2 textleft"> {{$data->name_employee}} </td>
+                                                        <td class="col-sm-2"><button class="btn btn-gradient-success newFont" data-toggle="modal" data-target="#editindicator" onclick="addContentToModal({{$data->indicator_stratetegic_id}},'{{$data->indicator_stratetegic_name}}',{{$data->goal}},{{$data->id_employee}});"><i class="mdi mdi-grease-pencil launch-modal"></i></button>
 
                                                         </td>
                                                     </tr>
@@ -125,29 +126,30 @@
                                     <div class="modal-body">
                                         <br>
                                         <h2 class="modal-title newFont" id="exampleModalLabel">แก้ไขตัวชี้วัด</h2>
-                                        <form class="forms-sample">
+                                        <form class="forms-sample" method="post" action="{{route('sec4updateInd')}}">
                                             <div class="row">
                                                 <div class="form-group col-md-12">
+                                                    <input type="hidden" id="indicator_stratetegic_ID_edit" name="id">
                                                     <label class="newFont">ตัวชี้วัดตามคำรับรอง</label>
-                                                    <input type="text" class="form-control" placeholder="หัวข้อตัวขี้วัด" required>
+                                                    <input type="text" class="form-control" placeholder="หัวข้อตัวขี้วัด" id="indicator_stratetegic_name_edit" name="newstrategic" required>
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="form-group col-md-12">
                                                     <label class="newFont">เป้าหมายตามคำรับรอง</label>
-                                                    <input type="text" class="form-control" placeholder="แผนตัวชี้วัด" required>
+                                                    <input type="text" class="form-control" placeholder="แผนตัวชี้วัด" id="goal_edit" name="newgoal" required>
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="form-group col-md-6">
                                                     <label class="newFont">ผู้รับผิดชอบ</label>
-                                                    <select class="form-control">
+                                                    <select class="form-control" name="newemployee" id="employee_edit">
                                                         <optgroup class="newFont">
-                                                            <option>เลือกผู้รับผิดชอบ</option>
-                                                            <option>ทีมดูแลเพจ</option>
-                                                            <option>เกษมาพร</option>
-                                                            <option>ปรีชา</option>
-                                                            <option>อาภรณ์</option>
+                                                            <option value="">เลือกผู้รับผิดชอบ</option>
+                                                            @foreach ($ob1 as $data1)
+                                                            <option value="{{$data1->id_employee}}">{{$data1-> name_employee}}
+                                                            </option>
+                                                            @endforeach
                                                         </optgroup>
                                                     </select>
                                                 </div>
@@ -157,9 +159,7 @@
                                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">
                                                         <h7 class="newFont">ยกเลิก</h7>
                                                     </button>
-                                                    <button type="button" class="btn btn-primary">
-                                                        <h7 class="newFont">บันทึก</h7>
-                                                    </button>
+                                                    <input type="submit" value="บันทึก" class="btn btn-primary">
                                                 </div>
                                             </div>
                                         </form>
@@ -192,13 +192,13 @@
                                             <div class="row">
                                                 <div class="form-group col-md-6">
                                                     <label class="newFont">ผู้รับผิดชอบ</label>
-                                                    <select class="form-control">
+                                                    <select class="form-control" name="employee" id="employee">
                                                         <optgroup class="newFont">
-                                                            <option>เลือกผู้รับผิดชอบ</option>
-                                                            <option>ทีมดูแลเพจ</option>
-                                                            <option>เกษมาพร</option>
-                                                            <option>ปรีชา</option>
-                                                            <option>อาภรณ์</option>
+                                                            <option value="e">เลือกผู้รับผิดชอบ</option>
+                                                            @foreach ($ob1 as $data1)
+                                                            <option value="{{$data1->id_employee}}">{{$data1-> name_employee}}
+                                                            </option>
+                                                            @endforeach
                                                         </optgroup>
                                                     </select>
                                                 </div>

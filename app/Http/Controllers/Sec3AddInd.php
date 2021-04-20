@@ -92,6 +92,10 @@ class Sec3AddInd extends Controller
                 'plan' => $request->newplan,
                 'unit' => $request->newunit,
             ]);
+
+        DB::table('access_result')
+            ->where('indicator_result_indicator_result_ID', $request->id)
+            ->update(['Employee_id_employee' => $request->newemployee]);
         return redirect()->back()->with('sucess', 'บันทึกข้อมูลเรียบร้อย');
     }
 

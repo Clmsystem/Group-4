@@ -39,7 +39,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script type="text/javascript">
-    function addContentToModal(id, name, plan, unit) {
+    function addContentToModal(id, name, plan, unit, employee) {
         document.getElementById('indicator_result_ID_edit').value = id;
         document.getElementById('indicator_result_name_edit').value = name;
         document.getElementById('plan_edit').value = plan;
@@ -110,8 +110,8 @@
                                                         </td>
                                                         <td class="col-sm-2 textleft"> {{$data->unit_name}} </td>
                                                         <td class="col-sm-1"> {{$data->plan}} </td>
-                                                        <td class="col-sm-2 textleft"> อาภรณ์ </td>
-                                                        <td class="col-sm-2"><button class="btn btn-gradient-success newFont" data-toggle="modal" data-target="#editindicator" onclick="addContentToModal({{$data->indicator_result_ID}},'{{$data->indicator_result_name}}',{{$data->plan}},{{$data->unit}});"><i class="mdi mdi-grease-pencil launch-modal"></i></button>
+                                                        <td class="col-sm-2 textleft"> {{$data->name_employee}} </td>
+                                                        <td class="col-sm-2"><button class="btn btn-gradient-success newFont" data-toggle="modal" data-target="#editindicator" onclick="addContentToModal({{$data->indicator_result_ID}},'{{$data->indicator_result_name}}',{{$data->plan}},{{$data->unit}},{{$data->id_employee}});"><i class="mdi mdi-grease-pencil launch-modal"></i></button>
 
                                                     </tr>
                                                     @endforeach
@@ -180,7 +180,7 @@
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <label class="newFont">ผู้รับผิดชอบ</label>
-                                                    <select class="form-control" name="newunit" id="unit_edit">
+                                                    <select class="form-control" name="newemployee" id="employee_edit">
                                                         <optgroup class="newFont">
                                                             <option value="">เลือกผู้รับผิดชอบ</option>
                                                             @foreach ($ob2 as $data2)
