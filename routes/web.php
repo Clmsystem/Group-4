@@ -58,24 +58,7 @@ Route::get('/sec4confirm', [Sec4Confirm::class, 'index']);
 Route::get('/sec3dashboard', function () {
     return view('sec3.sec3dashboard');
 });
-// Route::get('/sec3confirm', function () {
-//     return view('sec3.sec3confirm');
-// });
 
-// Route::get('/sec4savedata', function () {
-//     return view('sec4.savedata');
-// });
-
-// Route::get('/sec4addind', function () {
-//     return view('sec4.addind');
-// });
-
-// Route::get('/sec4search', function () {
-//     return view('sec4.sec4search');
-// });
-
-// Route::get('/content', [ObjectGroup1::class, 'index']);
-// Route::get('/content/{id}', [Kr::class, 'index']);
 Route::post('/sec3/add', [Sec3AddInd::class, 'addInd'])->name('sec3addInd');
 Route::post('/sec4/add', [Sec4AddInd::class, 'addInd'])->name('sec4addInd');
 Route::post('/sec3/update', [Sec3AddInd::class, 'updateInd'])->name('sec3updateInd');
@@ -84,6 +67,9 @@ Route::post('/sec4/updatedata', [Sec4SaveData::class, 'updateData'])->name('upda
 Route::post('/searchresultmountsec3', [Sec3Search::class, 'resultShowMount'])->name('resultsearchmountsec3');
 Route::post('/showresultmountsec3', [Sec3SaveData::class, 'resultShowMount'])->name('resultshowmountsec3');
 Route::post('/showresultmountsec4', [Sec4SaveData::class, 'resultShowMount'])->name('resultshowmountsec4');
+// Route::post('/sec3/confirmdata', [Sec3Confirm::class, 'updateData'])->name('confirmDataSec3');
+Route::post('/sec3confirmmonth', [Sec3Confirm::class, 'showmonth'])->name('showmonthsec3');
+
 Route::get('/sec4dashboard', function () {
     return view('sec4.sec4dashboard');
 });
