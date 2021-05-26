@@ -41,7 +41,16 @@ th {
 <!-- ------------------------------------------  Link Script Jquery-  --------------------------------------------->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
+<script type="text/javascript">
+function ModalEditData(id, name, result, performance) {
+    document.getElementById('result_ID_edit').value = id;
+    document.getElementById('result_name_edit').value = name;
+    document.getElementById('result_plan_edit').value = plan;
+    document.getElementById('result_unit_edit').value = unit;
+    document.getElementById('result_edit').value = result;
+    document.getElementById('performance_result_edit').value = performance;
+};
+</script>
 
 <body>
     <!-- ------------------------------------------  include  --------------------------------------------->
@@ -71,20 +80,50 @@ th {
                                             <h3 class="col-md-10 newFont"> ส่วนที่ 3
                                                 ตัวชี้วัดผลการปฏิบัติงานตามภารกิจของหน่วยงาน
                                             </h3>
-                                            <select class="col-md-2 from-control form-control-sm" id="">
-                                                <option>มกราคม</option>
-                                                <option>กุมภาพันธ์</option>
-                                                <option>มีนาคม</option>
-                                                <option>เมษายน</option>
-                                                <option>พฤษภาคม</option>
-                                                <option>มิถุนายน</option>
-                                                <option>กรกฎาคม</option>
-                                                <option>สิงหาคม</option>
-                                                <option>กันยายน</option>
-                                                <option>ตุลาคม</option>
-                                                <option>พฤศจิกายน</option>
-                                                <option>ธันวาคม</option>
-                                            </select>
+                                            <div class="col-md-2 form-group">
+                                                <form action="{{route('showmonthsec3')}}" method="POST">
+                                                    @csrf
+                                                    <select id="client_id" type="dropdown-toggle" class="form-control"
+                                                        name="mount">
+                                                        <optgroup>
+                                                            <option value="1" {{ $mount == 1 ? 'selected' : '' }}>มกราคม
+                                                            </option>
+                                                            <option value="2" {{ $mount == 2 ? 'selected' : '' }}>
+                                                                กุมภาพันธ์
+                                                            </option>
+                                                            <option value="3" {{ $mount == 3 ? 'selected' : '' }}>มีนาคม
+                                                            </option>
+                                                            <option value="4" {{ $mount == 4 ? 'selected' : '' }}>เมษายน
+                                                            </option>
+                                                            <option value="5" {{ $mount == 5 ? 'selected' : '' }}>
+                                                                พฤษภาคม
+                                                            </option>
+                                                            <option value="6" {{ $mount == 6 ? 'selected' : '' }}>
+                                                                มิถุนายน
+                                                            </option>
+                                                            <option value="7" {{ $mount == 7 ? 'selected' : '' }}>
+                                                                กรกฎาคม
+                                                            </option>
+                                                            <option value="8" {{ $mount == 8 ? 'selected' : '' }}>
+                                                                สิงหาคม
+                                                            </option>
+                                                            <option value="9" {{ $mount == 9 ? 'selected' : '' }}>
+                                                                กันยายน
+                                                            </option>
+                                                            <option value="10" {{ $mount == 10 ? 'selected' : '' }}>
+                                                                ตุลาคม
+                                                            </option>
+                                                            <option value="11" {{ $mount == 11 ? 'selected' : '' }}>
+                                                                พฤศจิกายน
+                                                            </option>
+                                                            <option value="12" {{ $mount == 12 ? 'selected' : '' }}>
+                                                                ธันวาคม
+                                                            </option>
+                                                        </optgroup>
+                                                    </select>
+                                                </form>
+                                            </div>
+
                                         </div>
                                     </div>
                                     <br>
@@ -119,7 +158,7 @@ th {
                                                         <td class="col-sm-5 break textleft">
                                                             {{$data->indicator_result_name}}
                                                         </td>
-                                                        <td class="col-sm-2 textleft"> เล่ม/คน </td>
+                                                        <td class="col-sm-2 textleft"> {{$data->unit_name}} </td>
                                                         <td class="col-sm-1"> {{$data->plan}} </td>
                                                         <td class="col-sm-3 textleft"> อาภรณ์ </td>
                                                         <!-- <td class="col-sm-2"><button
@@ -268,3 +307,10 @@ th {
     <!-- Div nav & side -->
     </div>
 </body>
+
+<script type="text/javascript">
+var select = document.getElementById('client_id');
+select.addEventListener('change', function() {
+    this.form.submit();
+}, false);
+</script>
