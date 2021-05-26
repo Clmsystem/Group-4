@@ -1,4 +1,4 @@
-@include('partials.header')
+@include('header.menu')
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Mitr&display=swap');
 
@@ -41,47 +41,26 @@
 <body>
     <!-- ------------------------------------------  include  --------------------------------------------->
 
-    <div class="container-scroller">
-        <!-- partial:partials/_navbar.html -->
-        @include('partials.navbar')
-        <!-- partial -->
-        <div class="container-fluid page-body-wrapper">
-            <!-- partial:partials/_sidebar.html -->
-            @include('partials.sidebar')
-            <!-- partial -->
-            <div class="main-panel">
-                <div class="content-wrapper">
-                    <div class="page-header">
-                        <h3 class="newFont"> กราฟตัวชี้วัด </h3>
-                    </div>
-                    <!-- chart-year -->
-                    <div class="row">
-                        <div class="col">
-                            <div id="chart-year">
-                            </div>
-                        </div>
-                    </div>
-                    <!-- chart-quarter -->
-                    <!-- <div class="row">
-                        <div class="col">
-                            <div id="chart-quarter">
-                            </div>
-                        </div>
-                    </div> -->
-                    <!-- chart-month -->
-                    <div class="row">
-                        <div class="col">
-                            <div id="chart-month">
-                            </div>
+    <@include('partials.navbar') @include('partials.sidebar') <!-- partial -->
+        <div class="main-panel">
+            <div class="content-wrapper">
+                <div class="page-header">
+                    <h3 class="newFont"> กราฟตัวชี้วัด <?= $name ?> ปีงบประมาณ <?= $year ?> </h3>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <div id="chart-month">
                         </div>
                     </div>
                 </div>
-                @include('partials.footer')
             </div>
+            @include('partials.footer')
+        </div>
 
         </div>
-    </div>
-    <!-- Div nav & side -->
+        </div>
+        <!-- Div nav & side -->
 
 </body>
 
@@ -125,7 +104,11 @@
         xaxis: {
             categories: ['2562', '2563', '2564'],
         },
-
+        // yaxis: {
+        //   title: {
+        //     text: '$ (thousands)'
+        //   }
+        // },
         fill: {
             opacity: 1
         },
@@ -138,10 +121,8 @@
         }
     };
     var chart = new ApexCharts(document.querySelector("#chart-year"), optionsYear);
-
     chart.render();
 </script>
-
 <!-- chart-quarter -->
 <script>
     var optionsQuarter = {
@@ -182,9 +163,14 @@
 <script>
     var optionsMonth = {
         series: [{
-            name: 'Value',
-            data: [44, 55, 57, 56, 61, 58, 63, 60, 66, 47, 58, 62]
-        }, ],
+                name: 'ผล',
+                data: [<?= (int)$n0 ?>, <?= (int)$n1 ?>, <?= (int)$n2 ?>, <?= (int)$n3 ?>, <?= (int)$n4 ?>, <?= (int)$n5 ?>, <?= (int)$n6 ?>, <?= (int)$n7 ?>, <?= (int)$n8 ?>, <?= (int)$n9 ?>, <?= (int)$n10 ?>, <?= (int)$n11 ?>]
+            },
+            {
+                name: 'ร้อยละผลสำเร็จ',
+                data: [<?= (int)$m0 ?>, <?= (int)$m1 ?>, <?= (int)$m2 ?>, <?= (int)$m3 ?>, <?= (int)$m4 ?>, <?= (int)$m5 ?>, <?= (int)$m6 ?>, <?= (int)$m7 ?>, <?= (int)$m8 ?>, <?= (int)$m9 ?>, <?= (int)$m10 ?>, <?= (int)$m11 ?>]
+            },
+        ],
         chart: {
             type: 'bar',
             height: 350
